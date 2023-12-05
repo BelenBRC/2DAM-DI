@@ -77,10 +77,11 @@
             this.labelListaPalabras = new System.Windows.Forms.Label();
             this.botonAniadirPalabra = new System.Windows.Forms.PictureBox();
             this.botonBorrarPalabra = new System.Windows.Forms.PictureBox();
-            this.picImagePendu = new System.Windows.Forms.PictureBox();
+            this.imagenAhorcado = new System.Windows.Forms.PictureBox();
             this.buttonVolverInicio = new System.Windows.Forms.Button();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
+            this.groupBoxPalabraAdivinar = new System.Windows.Forms.GroupBox();
             this.panelInicio.SuspendLayout();
             this.panelJuego.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -91,7 +92,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagePendu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInicio
@@ -141,7 +142,8 @@
             // 
             // panelJuego
             // 
-            this.panelJuego.Controls.Add(this.picImagePendu);
+            this.panelJuego.Controls.Add(this.imagenAhorcado);
+            this.panelJuego.Controls.Add(this.groupBoxPalabraAdivinar);
             this.panelJuego.Controls.Add(this.panel1);
             this.panelJuego.Location = new System.Drawing.Point(464, 0);
             this.panelJuego.Name = "panelJuego";
@@ -764,16 +766,16 @@
             this.botonBorrarPalabra.TabStop = false;
             this.botonBorrarPalabra.Tag = "delete";
             // 
-            // picImagePendu
+            // imagenAhorcado
             // 
-            this.picImagePendu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picImagePendu.Image = global::Ahorcado.Properties.Resources.Harry0;
-            this.picImagePendu.Location = new System.Drawing.Point(119, 5);
-            this.picImagePendu.Name = "picImagePendu";
-            this.picImagePendu.Size = new System.Drawing.Size(222, 275);
-            this.picImagePendu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImagePendu.TabIndex = 3;
-            this.picImagePendu.TabStop = false;
+            this.imagenAhorcado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagenAhorcado.Image = global::Ahorcado.Properties.Resources.Harry0;
+            this.imagenAhorcado.Location = new System.Drawing.Point(140, 0);
+            this.imagenAhorcado.Name = "imagenAhorcado";
+            this.imagenAhorcado.Size = new System.Drawing.Size(193, 241);
+            this.imagenAhorcado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenAhorcado.TabIndex = 3;
+            this.imagenAhorcado.TabStop = false;
             // 
             // buttonVolverInicio
             // 
@@ -812,6 +814,17 @@
             this.buttonVolver.UseVisualStyleBackColor = false;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
+            // groupBoxPalabraAdivinar
+            // 
+            this.groupBoxPalabraAdivinar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxPalabraAdivinar.Location = new System.Drawing.Point(0, 226);
+            this.groupBoxPalabraAdivinar.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxPalabraAdivinar.Name = "groupBoxPalabraAdivinar";
+            this.groupBoxPalabraAdivinar.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxPalabraAdivinar.Size = new System.Drawing.Size(458, 98);
+            this.groupBoxPalabraAdivinar.TabIndex = 4;
+            this.groupBoxPalabraAdivinar.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -835,7 +848,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagePendu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -858,7 +871,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPalabraBorrar;
         private System.Windows.Forms.Label labelListaPalabras;
-        private System.Windows.Forms.PictureBox picImagePendu;
+        private System.Windows.Forms.PictureBox imagenAhorcado;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel teclado;
         private System.Windows.Forms.Button buttonZ;
@@ -894,6 +907,7 @@
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.Button buttonVolverInicio;
         private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.GroupBox groupBoxPalabraAdivinar;
     }
 }
 
