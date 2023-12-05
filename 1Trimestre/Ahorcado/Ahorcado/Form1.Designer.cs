@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelInicio = new System.Windows.Forms.Panel();
+            this.botonSalir = new System.Windows.Forms.Button();
+            this.buttonAdministrador = new System.Windows.Forms.Button();
+            this.tituloJuego = new System.Windows.Forms.Label();
             this.panelJuego = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.teclado = new System.Windows.Forms.TableLayoutPanel();
@@ -72,15 +75,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtPalabraBorrar = new System.Windows.Forms.TextBox();
             this.labelListaPalabras = new System.Windows.Forms.Label();
-            this.tituloJuego = new System.Windows.Forms.Label();
-            this.buttonAdministrador = new System.Windows.Forms.Button();
-            this.buttonSalir = new System.Windows.Forms.Button();
-            this.botonVolver = new System.Windows.Forms.PictureBox();
             this.botonAniadirPalabra = new System.Windows.Forms.PictureBox();
             this.botonBorrarPalabra = new System.Windows.Forms.PictureBox();
             this.picImagePendu = new System.Windows.Forms.PictureBox();
-            this.botonVolverJuego = new System.Windows.Forms.PictureBox();
-            this.botonPlay = new System.Windows.Forms.PictureBox();
+            this.buttonVolverInicio = new System.Windows.Forms.Button();
+            this.buttonPlay = new System.Windows.Forms.Button();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.panelInicio.SuspendLayout();
             this.panelJuego.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,24 +89,55 @@
             this.panelPalabras.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonVolver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagePendu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonVolverJuego)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonPlay)).BeginInit();
             this.SuspendLayout();
             // 
             // panelInicio
             // 
-            this.panelInicio.Controls.Add(this.buttonSalir);
+            this.panelInicio.Controls.Add(this.botonSalir);
             this.panelInicio.Controls.Add(this.buttonAdministrador);
             this.panelInicio.Controls.Add(this.tituloJuego);
-            this.panelInicio.Controls.Add(this.botonPlay);
+            this.panelInicio.Controls.Add(this.buttonPlay);
             this.panelInicio.Location = new System.Drawing.Point(0, 0);
             this.panelInicio.Name = "panelInicio";
             this.panelInicio.Size = new System.Drawing.Size(458, 589);
             this.panelInicio.TabIndex = 0;
+            // 
+            // botonSalir
+            // 
+            this.botonSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.botonSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.botonSalir.Location = new System.Drawing.Point(297, 492);
+            this.botonSalir.Name = "botonSalir";
+            this.botonSalir.Size = new System.Drawing.Size(149, 82);
+            this.botonSalir.TabIndex = 2;
+            this.botonSalir.Text = "SALIR";
+            this.botonSalir.UseVisualStyleBackColor = false;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click_1);
+            // 
+            // buttonAdministrador
+            // 
+            this.buttonAdministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAdministrador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
+            this.buttonAdministrador.Name = "buttonAdministrador";
+            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
+            this.buttonAdministrador.TabIndex = 3;
+            this.buttonAdministrador.Text = "ADMIN";
+            this.buttonAdministrador.UseVisualStyleBackColor = false;
+            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
+            // 
+            // tituloJuego
+            // 
+            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloJuego.Location = new System.Drawing.Point(12, 38);
+            this.tituloJuego.Name = "tituloJuego";
+            this.tituloJuego.Size = new System.Drawing.Size(434, 161);
+            this.tituloJuego.TabIndex = 14;
+            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\nHARRY POTTER";
+            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelJuego
             // 
@@ -120,7 +151,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
-            this.panel1.Controls.Add(this.botonVolverJuego);
+            this.panel1.Controls.Add(this.buttonVolverInicio);
             this.panel1.Controls.Add(this.teclado);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 331);
@@ -186,7 +217,7 @@
             this.buttonZ.Location = new System.Drawing.Point(355, 97);
             this.buttonZ.Name = "buttonZ";
             this.buttonZ.Size = new System.Drawing.Size(43, 44);
-            this.buttonZ.TabIndex = 42;
+            this.buttonZ.TabIndex = 34;
             this.buttonZ.Tag = "Z";
             this.buttonZ.Text = "Z";
             this.buttonZ.UseVisualStyleBackColor = false;
@@ -201,7 +232,7 @@
             this.buttonY.Location = new System.Drawing.Point(311, 97);
             this.buttonY.Name = "buttonY";
             this.buttonY.Size = new System.Drawing.Size(38, 44);
-            this.buttonY.TabIndex = 41;
+            this.buttonY.TabIndex = 33;
             this.buttonY.Tag = "Y";
             this.buttonY.Text = "Y";
             this.buttonY.UseVisualStyleBackColor = false;
@@ -216,7 +247,7 @@
             this.buttonX.Location = new System.Drawing.Point(267, 97);
             this.buttonX.Name = "buttonX";
             this.buttonX.Size = new System.Drawing.Size(38, 44);
-            this.buttonX.TabIndex = 40;
+            this.buttonX.TabIndex = 32;
             this.buttonX.Tag = "X";
             this.buttonX.Text = "X";
             this.buttonX.UseVisualStyleBackColor = false;
@@ -231,7 +262,7 @@
             this.buttonW.Location = new System.Drawing.Point(223, 97);
             this.buttonW.Name = "buttonW";
             this.buttonW.Size = new System.Drawing.Size(38, 44);
-            this.buttonW.TabIndex = 39;
+            this.buttonW.TabIndex = 31;
             this.buttonW.Tag = "W";
             this.buttonW.Text = "W";
             this.buttonW.UseVisualStyleBackColor = false;
@@ -246,7 +277,7 @@
             this.buttonV.Location = new System.Drawing.Point(179, 97);
             this.buttonV.Name = "buttonV";
             this.buttonV.Size = new System.Drawing.Size(38, 44);
-            this.buttonV.TabIndex = 38;
+            this.buttonV.TabIndex = 30;
             this.buttonV.Tag = "V";
             this.buttonV.Text = "V";
             this.buttonV.UseVisualStyleBackColor = false;
@@ -261,7 +292,7 @@
             this.buttonU.Location = new System.Drawing.Point(135, 97);
             this.buttonU.Name = "buttonU";
             this.buttonU.Size = new System.Drawing.Size(38, 44);
-            this.buttonU.TabIndex = 37;
+            this.buttonU.TabIndex = 29;
             this.buttonU.Tag = "U";
             this.buttonU.Text = "U";
             this.buttonU.UseVisualStyleBackColor = false;
@@ -276,7 +307,7 @@
             this.buttonT.Location = new System.Drawing.Point(91, 97);
             this.buttonT.Name = "buttonT";
             this.buttonT.Size = new System.Drawing.Size(38, 44);
-            this.buttonT.TabIndex = 36;
+            this.buttonT.TabIndex = 28;
             this.buttonT.Tag = "T";
             this.buttonT.Text = "T";
             this.buttonT.UseVisualStyleBackColor = false;
@@ -291,7 +322,7 @@
             this.buttonS.Location = new System.Drawing.Point(47, 97);
             this.buttonS.Name = "buttonS";
             this.buttonS.Size = new System.Drawing.Size(38, 44);
-            this.buttonS.TabIndex = 35;
+            this.buttonS.TabIndex = 27;
             this.buttonS.Tag = "S";
             this.buttonS.Text = "S";
             this.buttonS.UseVisualStyleBackColor = false;
@@ -306,7 +337,7 @@
             this.buttonR.Location = new System.Drawing.Point(3, 97);
             this.buttonR.Name = "buttonR";
             this.buttonR.Size = new System.Drawing.Size(38, 44);
-            this.buttonR.TabIndex = 34;
+            this.buttonR.TabIndex = 26;
             this.buttonR.Tag = "R";
             this.buttonR.Text = "R";
             this.buttonR.UseVisualStyleBackColor = false;
@@ -321,7 +352,7 @@
             this.buttonQ.Location = new System.Drawing.Point(355, 50);
             this.buttonQ.Name = "buttonQ";
             this.buttonQ.Size = new System.Drawing.Size(43, 41);
-            this.buttonQ.TabIndex = 7;
+            this.buttonQ.TabIndex = 25;
             this.buttonQ.Tag = "Q";
             this.buttonQ.Text = "Q";
             this.buttonQ.UseVisualStyleBackColor = false;
@@ -561,7 +592,7 @@
             this.buttonA.Location = new System.Drawing.Point(3, 3);
             this.buttonA.Name = "buttonA";
             this.buttonA.Size = new System.Drawing.Size(38, 41);
-            this.buttonA.TabIndex = 9;
+            this.buttonA.TabIndex = 8;
             this.buttonA.Tag = "A";
             this.buttonA.Text = "A";
             this.buttonA.UseVisualStyleBackColor = false;
@@ -576,14 +607,14 @@
             this.buttonB.Location = new System.Drawing.Point(47, 3);
             this.buttonB.Name = "buttonB";
             this.buttonB.Size = new System.Drawing.Size(38, 41);
-            this.buttonB.TabIndex = 8;
+            this.buttonB.TabIndex = 9;
             this.buttonB.Tag = "B";
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = false;
             // 
             // panelAdministrador
             // 
-            this.panelAdministrador.Controls.Add(this.botonVolver);
+            this.panelAdministrador.Controls.Add(this.buttonVolver);
             this.panelAdministrador.Controls.Add(this.listaPalabras);
             this.panelAdministrador.Controls.Add(this.panelPalabras);
             this.panelAdministrador.Controls.Add(this.labelListaPalabras);
@@ -713,43 +744,6 @@
             this.labelListaPalabras.Text = "LISTA DE PALABRAS ";
             this.labelListaPalabras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tituloJuego
-            // 
-            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloJuego.Location = new System.Drawing.Point(12, 38);
-            this.tituloJuego.Name = "tituloJuego";
-            this.tituloJuego.Size = new System.Drawing.Size(434, 161);
-            this.tituloJuego.TabIndex = 14;
-            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\nHARRY POTTER";
-            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonAdministrador
-            // 
-            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
-            this.buttonAdministrador.Name = "buttonAdministrador";
-            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
-            this.buttonAdministrador.TabIndex = 15;
-            this.buttonAdministrador.Text = "ADMIN";
-            this.buttonAdministrador.UseVisualStyleBackColor = true;
-            // 
-            // buttonSalir
-            // 
-            this.buttonSalir.Location = new System.Drawing.Point(297, 492);
-            this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(149, 82);
-            this.buttonSalir.TabIndex = 16;
-            this.buttonSalir.Text = "SALIR";
-            this.buttonSalir.UseVisualStyleBackColor = true;
-            // 
-            // botonVolver
-            // 
-            this.botonVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonVolver.Location = new System.Drawing.Point(384, 516);
-            this.botonVolver.Name = "botonVolver";
-            this.botonVolver.Size = new System.Drawing.Size(60, 60);
-            this.botonVolver.TabIndex = 10;
-            this.botonVolver.TabStop = false;
-            // 
             // botonAniadirPalabra
             // 
             this.botonAniadirPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -774,34 +768,49 @@
             // 
             this.picImagePendu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picImagePendu.Image = global::Ahorcado.Properties.Resources.Harry0;
-            this.picImagePendu.Location = new System.Drawing.Point(124, 38);
+            this.picImagePendu.Location = new System.Drawing.Point(119, 5);
             this.picImagePendu.Name = "picImagePendu";
             this.picImagePendu.Size = new System.Drawing.Size(222, 275);
             this.picImagePendu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picImagePendu.TabIndex = 3;
             this.picImagePendu.TabStop = false;
             // 
-            // botonVolverJuego
+            // buttonVolverInicio
             // 
-            this.botonVolverJuego.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonVolverJuego.Location = new System.Drawing.Point(369, 185);
-            this.botonVolverJuego.Name = "botonVolverJuego";
-            this.botonVolverJuego.Size = new System.Drawing.Size(60, 60);
-            this.botonVolverJuego.TabIndex = 11;
-            this.botonVolverJuego.TabStop = false;
+            this.buttonVolverInicio.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonVolverInicio.BackgroundImage = global::Ahorcado.Properties.Resources.back;
+            this.buttonVolverInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVolverInicio.ForeColor = System.Drawing.Color.Black;
+            this.buttonVolverInicio.Location = new System.Drawing.Point(360, 185);
+            this.buttonVolverInicio.Name = "buttonVolverInicio";
+            this.buttonVolverInicio.Size = new System.Drawing.Size(65, 57);
+            this.buttonVolverInicio.TabIndex = 8;
+            this.buttonVolverInicio.UseVisualStyleBackColor = false;
+            this.buttonVolverInicio.Click += new System.EventHandler(this.buttonVolverInicio_Click);
             // 
-            // botonPlay
+            // buttonPlay
             // 
-            this.botonPlay.BackColor = System.Drawing.Color.Transparent;
-            this.botonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonPlay.Image = global::Ahorcado.Properties.Resources.play1;
-            this.botonPlay.Location = new System.Drawing.Point(155, 274);
-            this.botonPlay.Name = "botonPlay";
-            this.botonPlay.Size = new System.Drawing.Size(148, 127);
-            this.botonPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.botonPlay.TabIndex = 11;
-            this.botonPlay.TabStop = false;
-            this.botonPlay.Tag = "";
+            this.buttonPlay.BackgroundImage = global::Ahorcado.Properties.Resources.play;
+            this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPlay.Location = new System.Drawing.Point(155, 274);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(148, 127);
+            this.buttonPlay.TabIndex = 1;
+            this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
+            // 
+            // buttonVolver
+            // 
+            this.buttonVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonVolver.BackgroundImage = global::Ahorcado.Properties.Resources.back;
+            this.buttonVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVolver.ForeColor = System.Drawing.Color.Black;
+            this.buttonVolver.Location = new System.Drawing.Point(360, 518);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(65, 57);
+            this.buttonVolver.TabIndex = 9;
+            this.buttonVolver.UseVisualStyleBackColor = false;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // Form1
             // 
@@ -824,12 +833,9 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonVolver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImagePendu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonVolverJuego)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.botonPlay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -837,10 +843,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panelInicio;
-        private System.Windows.Forms.PictureBox botonPlay;
         private System.Windows.Forms.Panel panelJuego;
         private System.Windows.Forms.Panel panelAdministrador;
-        private System.Windows.Forms.PictureBox botonVolver;
         private System.Windows.Forms.ListView listaPalabras;
         private System.Windows.Forms.Panel panelPalabras;
         private System.Windows.Forms.Panel panel3;
@@ -884,10 +888,12 @@
         private System.Windows.Forms.Button buttonC;
         private System.Windows.Forms.Button buttonA;
         private System.Windows.Forms.Button buttonB;
-        private System.Windows.Forms.PictureBox botonVolverJuego;
         private System.Windows.Forms.Label tituloJuego;
-        private System.Windows.Forms.Button buttonSalir;
+        private System.Windows.Forms.Button botonSalir;
         private System.Windows.Forms.Button buttonAdministrador;
+        private System.Windows.Forms.Button buttonPlay;
+        private System.Windows.Forms.Button buttonVolverInicio;
+        private System.Windows.Forms.Button buttonVolver;
     }
 }
 

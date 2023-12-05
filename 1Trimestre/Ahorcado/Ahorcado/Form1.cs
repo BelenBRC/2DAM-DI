@@ -18,6 +18,10 @@ namespace Ahorcado
         {
             InitializeComponent();
             InicializarFuente();
+
+            //Ocultar panel de juego y de administrador
+            panelJuego.Visible = false;
+            panelAdministrador.Visible = false;
         }
 
         private void InicializarFuente()
@@ -28,7 +32,7 @@ namespace Ahorcado
                 harryPotter = new Font(new FontFamily("Harry P"), 25);
                 labelListaPalabras.Font = harryPotter;
                 tituloJuego.Font = harryPotter;
-                buttonSalir.Font = harryPotter;
+                botonSalir.Font = harryPotter;
                 buttonAdministrador.Font = harryPotter;
                 buttonA.Font = harryPotter;
                 buttonB.Font = harryPotter;
@@ -66,6 +70,35 @@ namespace Ahorcado
         }
 
         private void botonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            panelJuego.Visible = true;
+            panelInicio.Visible = false;
+        }
+
+        private void buttonAdministrador_Click(object sender, EventArgs e)
+        {
+            panelAdministrador.Visible = true;
+            panelInicio.Visible = false;
+        }
+
+        private void buttonVolverInicio_Click(object sender, EventArgs e)
+        {
+            panelInicio.Visible = true;
+            panelJuego.Visible = false;
+        }
+
+        private void buttonVolver_Click(object sender, EventArgs e)
+        {
+            panelInicio.Visible = true;
+            panelAdministrador.Visible = false;
+        }
+
+        private void botonSalir_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
