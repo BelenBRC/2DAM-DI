@@ -130,5 +130,23 @@
   <ItemGroup>
     <None Include="Resources\back1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\harryAtaca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voldemortAtaca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\harryAtaca1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voldemortAtaca1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -94,6 +94,7 @@ namespace Ahorcado
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo cargar la fuente");
+                Console.WriteLine(ex.Message);
                 Application.Exit();
             }
         }
@@ -153,6 +154,7 @@ namespace Ahorcado
                 catch (Exception ex)
                 {
                     MessageBox.Show("No se pudo leer el archivo de palabras");
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -181,6 +183,7 @@ namespace Ahorcado
             catch (Exception ex)
             {
                 MessageBox.Show("No se pudo colocar la palabra");
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -196,7 +199,10 @@ namespace Ahorcado
 
             if (palabraActual.ToUpper().Contains(letraActual))
             {
-                //TODO: Mostrar mensaje ¡Fantástico, Potter
+                //Mostrar panel de acierto
+                panelAcierto.Visible = true;
+                //Ocultar panel de fallo
+                panelFallo.Visible = false;
                 for (int i = 0; i < palabraActual.Length; i++)
                 {
                     if (palabraActual[i] == letraActual)
@@ -218,17 +224,23 @@ namespace Ahorcado
 
                 if (ganado)
                 {
-                    MessageBox.Show("¡Fantástico, Potter!");
-                    //TODO: Mostrar mensaje de victoria en un label
                     imagenAhorcado.Image = Properties.Resources.HarryWin;
+                    //Mostrar botón de repetir
+                    buttonRepeat.Visible = true;
+                    //Ocultar paneles de acierto y fallo
+                    panelAcierto.Visible = false;
+                    panelFallo.Visible = false;
                 }
             }
             else
             {
-                MessageBox.Show("Avada Kedavra");
                 oportunidades--;
                 imagenAhorcado.Image = imagenes[oportunidades];
-                //TODO: Mostrar mensaje de hechizo de herida en función de oportunidades en un label
+                
+                //Mostrar panel de fallo
+                panelFallo.Visible = true;
+                //Ocultar panel de acierto
+                panelAcierto.Visible = false;
 
                 if (oportunidades == 0)
                 {
@@ -241,12 +253,23 @@ namespace Ahorcado
                         labels[i].Text = palabraActual[i].ToString();
                         labels[i].Font = harryPotterPeque;
                     }
+
+                    //Mostrar botón de repetir
+                    buttonRepeat.Visible = true;
+
+                    //Ocultar paneles de acierto y fallo
+                    panelAcierto.Visible = false;
+                    panelFallo.Visible = false;
                 }
             }
         }
 
         private void reestablecerControlesJuego()
         {
+            //Ocultar imágenes de victoria y fallo
+            panelAcierto.Visible = false;
+            panelFallo.Visible = false;
+
             //Activar todos los botones
             buttonA.Enabled = true;
             buttonB.Enabled = true;
@@ -305,6 +328,10 @@ namespace Ahorcado
             buttonY.BackColor = Color.White;
             buttonZ.BackColor = Color.White;
 
+            //Ocultar botón de repetir
+            buttonRepeat.Visible = false;
+
+            //Reestablecer oportunidades
             oportunidades = 8;
 
             //Reestablecer imagen
@@ -347,5 +374,9 @@ namespace Ahorcado
             buttonZ.Click += new EventHandler(buttonLetra_Click);
         }
 
+        private void buttonRepeat_Click(object sender, EventArgs e)
+        {
+            reestablecerControlesJuego();
+        }
     }
 }

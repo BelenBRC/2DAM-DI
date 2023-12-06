@@ -29,12 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panelInicio = new System.Windows.Forms.Panel();
-            this.botonSalir = new System.Windows.Forms.Button();
-            this.buttonAdministrador = new System.Windows.Forms.Button();
-            this.tituloJuego = new System.Windows.Forms.Label();
+            this.panelAdministrador = new System.Windows.Forms.Panel();
+            this.buttonVolver = new System.Windows.Forms.Button();
+            this.listaPalabras = new System.Windows.Forms.ListView();
+            this.panelPalabras = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.botonAniadirPalabra = new System.Windows.Forms.PictureBox();
+            this.txtPistaNueva = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPalabraNueva = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.botonBorrarPalabra = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPalabraBorrar = new System.Windows.Forms.TextBox();
+            this.labelListaPalabras = new System.Windows.Forms.Label();
             this.panelJuego = new System.Windows.Forms.Panel();
+            this.panelFallo = new System.Windows.Forms.Panel();
+            this.panelAcierto = new System.Windows.Forms.Panel();
+            this.imagenAhorcado = new System.Windows.Forms.PictureBox();
+            this.groupBoxPalabraAdivinar = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRepeat = new System.Windows.Forms.Button();
+            this.buttonVolverInicio = new System.Windows.Forms.Button();
             this.teclado = new System.Windows.Forms.TableLayoutPanel();
             this.buttonZ = new System.Windows.Forms.Button();
             this.buttonY = new System.Windows.Forms.Button();
@@ -63,85 +80,195 @@
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonA = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
-            this.panelAdministrador = new System.Windows.Forms.Panel();
-            this.listaPalabras = new System.Windows.Forms.ListView();
-            this.panelPalabras = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtPistaNueva = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPalabraNueva = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtPalabraBorrar = new System.Windows.Forms.TextBox();
-            this.labelListaPalabras = new System.Windows.Forms.Label();
-            this.botonAniadirPalabra = new System.Windows.Forms.PictureBox();
-            this.botonBorrarPalabra = new System.Windows.Forms.PictureBox();
-            this.imagenAhorcado = new System.Windows.Forms.PictureBox();
-            this.buttonVolverInicio = new System.Windows.Forms.Button();
+            this.panelInicio = new System.Windows.Forms.Panel();
+            this.botonSalir = new System.Windows.Forms.Button();
+            this.buttonAdministrador = new System.Windows.Forms.Button();
+            this.tituloJuego = new System.Windows.Forms.Label();
             this.buttonPlay = new System.Windows.Forms.Button();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.groupBoxPalabraAdivinar = new System.Windows.Forms.GroupBox();
-            this.panelInicio.SuspendLayout();
-            this.panelJuego.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.teclado.SuspendLayout();
             this.panelAdministrador.SuspendLayout();
             this.panelPalabras.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).BeginInit();
+            this.panelJuego.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.teclado.SuspendLayout();
+            this.panelInicio.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelInicio
+            // panelAdministrador
             // 
-            this.panelInicio.Controls.Add(this.botonSalir);
-            this.panelInicio.Controls.Add(this.buttonAdministrador);
-            this.panelInicio.Controls.Add(this.tituloJuego);
-            this.panelInicio.Controls.Add(this.buttonPlay);
-            this.panelInicio.Location = new System.Drawing.Point(0, 0);
-            this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(458, 589);
-            this.panelInicio.TabIndex = 0;
+            this.panelAdministrador.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panelAdministrador.Controls.Add(this.buttonVolver);
+            this.panelAdministrador.Controls.Add(this.listaPalabras);
+            this.panelAdministrador.Controls.Add(this.panelPalabras);
+            this.panelAdministrador.Controls.Add(this.labelListaPalabras);
+            this.panelAdministrador.Location = new System.Drawing.Point(928, 0);
+            this.panelAdministrador.Name = "panelAdministrador";
+            this.panelAdministrador.Size = new System.Drawing.Size(458, 589);
+            this.panelAdministrador.TabIndex = 2;
             // 
-            // botonSalir
+            // buttonVolver
             // 
-            this.botonSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.botonSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.botonSalir.Location = new System.Drawing.Point(297, 492);
-            this.botonSalir.Name = "botonSalir";
-            this.botonSalir.Size = new System.Drawing.Size(149, 82);
-            this.botonSalir.TabIndex = 2;
-            this.botonSalir.Text = "SALIR";
-            this.botonSalir.UseVisualStyleBackColor = false;
-            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click_1);
+            this.buttonVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonVolver.BackgroundImage = global::Ahorcado.Properties.Resources.back;
+            this.buttonVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVolver.ForeColor = System.Drawing.Color.Black;
+            this.buttonVolver.Location = new System.Drawing.Point(360, 518);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(65, 57);
+            this.buttonVolver.TabIndex = 9;
+            this.buttonVolver.UseVisualStyleBackColor = false;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
-            // buttonAdministrador
+            // listaPalabras
             // 
-            this.buttonAdministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAdministrador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
-            this.buttonAdministrador.Name = "buttonAdministrador";
-            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
-            this.buttonAdministrador.TabIndex = 3;
-            this.buttonAdministrador.Text = "ADMIN";
-            this.buttonAdministrador.UseVisualStyleBackColor = false;
-            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
+            this.listaPalabras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaPalabras.HideSelection = false;
+            this.listaPalabras.Location = new System.Drawing.Point(12, 353);
+            this.listaPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listaPalabras.Name = "listaPalabras";
+            this.listaPalabras.Size = new System.Drawing.Size(432, 144);
+            this.listaPalabras.TabIndex = 9;
+            this.listaPalabras.UseCompatibleStateImageBehavior = false;
             // 
-            // tituloJuego
+            // panelPalabras
             // 
-            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloJuego.Location = new System.Drawing.Point(12, 38);
-            this.tituloJuego.Name = "tituloJuego";
-            this.tituloJuego.Size = new System.Drawing.Size(434, 161);
-            this.tituloJuego.TabIndex = 14;
-            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\nHARRY POTTER";
-            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panelPalabras.BackColor = System.Drawing.Color.LightCyan;
+            this.panelPalabras.Controls.Add(this.panel3);
+            this.panelPalabras.Controls.Add(this.panel2);
+            this.panelPalabras.Location = new System.Drawing.Point(0, 91);
+            this.panelPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelPalabras.Name = "panelPalabras";
+            this.panelPalabras.Size = new System.Drawing.Size(458, 240);
+            this.panelPalabras.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Azure;
+            this.panel3.Controls.Add(this.botonAniadirPalabra);
+            this.panel3.Controls.Add(this.txtPistaNueva);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.txtPalabraNueva);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(9, 21);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(432, 101);
+            this.panel3.TabIndex = 7;
+            // 
+            // botonAniadirPalabra
+            // 
+            this.botonAniadirPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonAniadirPalabra.Location = new System.Drawing.Point(268, 14);
+            this.botonAniadirPalabra.Name = "botonAniadirPalabra";
+            this.botonAniadirPalabra.Size = new System.Drawing.Size(148, 78);
+            this.botonAniadirPalabra.TabIndex = 5;
+            this.botonAniadirPalabra.TabStop = false;
+            this.botonAniadirPalabra.Tag = "add";
+            // 
+            // txtPistaNueva
+            // 
+            this.txtPistaNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPistaNueva.Location = new System.Drawing.Point(149, 59);
+            this.txtPistaNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPistaNueva.Name = "txtPistaNueva";
+            this.txtPistaNueva.Size = new System.Drawing.Size(103, 33);
+            this.txtPistaNueva.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(4, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 28);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Pista :";
+            // 
+            // txtPalabraNueva
+            // 
+            this.txtPalabraNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPalabraNueva.Location = new System.Drawing.Point(149, 14);
+            this.txtPalabraNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPalabraNueva.Name = "txtPalabraNueva";
+            this.txtPalabraNueva.Size = new System.Drawing.Size(103, 33);
+            this.txtPalabraNueva.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(4, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 28);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Palabra :";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Azure;
+            this.panel2.Controls.Add(this.botonBorrarPalabra);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txtPalabraBorrar);
+            this.panel2.Location = new System.Drawing.Point(9, 139);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(432, 64);
+            this.panel2.TabIndex = 6;
+            // 
+            // botonBorrarPalabra
+            // 
+            this.botonBorrarPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonBorrarPalabra.Location = new System.Drawing.Point(285, 6);
+            this.botonBorrarPalabra.Name = "botonBorrarPalabra";
+            this.botonBorrarPalabra.Size = new System.Drawing.Size(106, 55);
+            this.botonBorrarPalabra.TabIndex = 6;
+            this.botonBorrarPalabra.TabStop = false;
+            this.botonBorrarPalabra.Tag = "delete";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(4, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 28);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Borrar palabra :";
+            // 
+            // txtPalabraBorrar
+            // 
+            this.txtPalabraBorrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPalabraBorrar.Location = new System.Drawing.Point(149, 22);
+            this.txtPalabraBorrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPalabraBorrar.Name = "txtPalabraBorrar";
+            this.txtPalabraBorrar.Size = new System.Drawing.Size(103, 33);
+            this.txtPalabraBorrar.TabIndex = 2;
+            // 
+            // labelListaPalabras
+            // 
+            this.labelListaPalabras.BackColor = System.Drawing.SystemColors.Window;
+            this.labelListaPalabras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelListaPalabras.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelListaPalabras.ForeColor = System.Drawing.Color.DimGray;
+            this.labelListaPalabras.Location = new System.Drawing.Point(12, 12);
+            this.labelListaPalabras.Name = "labelListaPalabras";
+            this.labelListaPalabras.Size = new System.Drawing.Size(432, 63);
+            this.labelListaPalabras.TabIndex = 7;
+            this.labelListaPalabras.Text = "LISTA DE PALABRAS ";
+            this.labelListaPalabras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelJuego
             // 
+            this.panelJuego.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panelJuego.Controls.Add(this.panelFallo);
+            this.panelJuego.Controls.Add(this.panelAcierto);
             this.panelJuego.Controls.Add(this.imagenAhorcado);
             this.panelJuego.Controls.Add(this.groupBoxPalabraAdivinar);
             this.panelJuego.Controls.Add(this.panel1);
@@ -150,16 +277,89 @@
             this.panelJuego.Size = new System.Drawing.Size(458, 589);
             this.panelJuego.TabIndex = 1;
             // 
+            // panelFallo
+            // 
+            this.panelFallo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelFallo.BackgroundImage = global::Ahorcado.Properties.Resources.voldemortAtaca1;
+            this.panelFallo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelFallo.Location = new System.Drawing.Point(324, 0);
+            this.panelFallo.Name = "panelFallo";
+            this.panelFallo.Size = new System.Drawing.Size(134, 250);
+            this.panelFallo.TabIndex = 6;
+            // 
+            // panelAcierto
+            // 
+            this.panelAcierto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panelAcierto.BackgroundImage = global::Ahorcado.Properties.Resources.harryAtaca1;
+            this.panelAcierto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelAcierto.Location = new System.Drawing.Point(0, 0);
+            this.panelAcierto.Name = "panelAcierto";
+            this.panelAcierto.Size = new System.Drawing.Size(134, 250);
+            this.panelAcierto.TabIndex = 5;
+            // 
+            // imagenAhorcado
+            // 
+            this.imagenAhorcado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.imagenAhorcado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagenAhorcado.Image = global::Ahorcado.Properties.Resources.Harry0;
+            this.imagenAhorcado.Location = new System.Drawing.Point(134, 0);
+            this.imagenAhorcado.Name = "imagenAhorcado";
+            this.imagenAhorcado.Size = new System.Drawing.Size(193, 250);
+            this.imagenAhorcado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imagenAhorcado.TabIndex = 3;
+            this.imagenAhorcado.TabStop = false;
+            // 
+            // groupBoxPalabraAdivinar
+            // 
+            this.groupBoxPalabraAdivinar.BackColor = System.Drawing.Color.White;
+            this.groupBoxPalabraAdivinar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxPalabraAdivinar.Location = new System.Drawing.Point(0, 230);
+            this.groupBoxPalabraAdivinar.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxPalabraAdivinar.Name = "groupBoxPalabraAdivinar";
+            this.groupBoxPalabraAdivinar.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBoxPalabraAdivinar.Size = new System.Drawing.Size(458, 94);
+            this.groupBoxPalabraAdivinar.TabIndex = 4;
+            this.groupBoxPalabraAdivinar.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panel1.Controls.Add(this.buttonRepeat);
             this.panel1.Controls.Add(this.buttonVolverInicio);
             this.panel1.Controls.Add(this.teclado);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 331);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(458, 258);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonRepeat
+            // 
+            this.buttonRepeat.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonRepeat.BackgroundImage = global::Ahorcado.Properties.Resources.repeat;
+            this.buttonRepeat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonRepeat.ForeColor = System.Drawing.Color.Black;
+            this.buttonRepeat.Location = new System.Drawing.Point(28, 185);
+            this.buttonRepeat.Name = "buttonRepeat";
+            this.buttonRepeat.Size = new System.Drawing.Size(65, 57);
+            this.buttonRepeat.TabIndex = 9;
+            this.buttonRepeat.UseVisualStyleBackColor = false;
+            this.buttonRepeat.Click += new System.EventHandler(this.buttonRepeat_Click);
+            // 
+            // buttonVolverInicio
+            // 
+            this.buttonVolverInicio.BackColor = System.Drawing.Color.LightCyan;
+            this.buttonVolverInicio.BackgroundImage = global::Ahorcado.Properties.Resources.back;
+            this.buttonVolverInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonVolverInicio.ForeColor = System.Drawing.Color.Black;
+            this.buttonVolverInicio.Location = new System.Drawing.Point(360, 185);
+            this.buttonVolverInicio.Name = "buttonVolverInicio";
+            this.buttonVolverInicio.Size = new System.Drawing.Size(65, 57);
+            this.buttonVolverInicio.TabIndex = 8;
+            this.buttonVolverInicio.UseVisualStyleBackColor = false;
+            this.buttonVolverInicio.Click += new System.EventHandler(this.buttonVolverInicio_Click);
             // 
             // teclado
             // 
@@ -614,184 +814,59 @@
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = false;
             // 
-            // panelAdministrador
+            // panelInicio
             // 
-            this.panelAdministrador.Controls.Add(this.buttonVolver);
-            this.panelAdministrador.Controls.Add(this.listaPalabras);
-            this.panelAdministrador.Controls.Add(this.panelPalabras);
-            this.panelAdministrador.Controls.Add(this.labelListaPalabras);
-            this.panelAdministrador.Location = new System.Drawing.Point(928, 0);
-            this.panelAdministrador.Name = "panelAdministrador";
-            this.panelAdministrador.Size = new System.Drawing.Size(458, 589);
-            this.panelAdministrador.TabIndex = 2;
+            this.panelInicio.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panelInicio.Controls.Add(this.botonSalir);
+            this.panelInicio.Controls.Add(this.buttonAdministrador);
+            this.panelInicio.Controls.Add(this.tituloJuego);
+            this.panelInicio.Controls.Add(this.buttonPlay);
+            this.panelInicio.Location = new System.Drawing.Point(0, 0);
+            this.panelInicio.Name = "panelInicio";
+            this.panelInicio.Size = new System.Drawing.Size(458, 589);
+            this.panelInicio.TabIndex = 0;
             // 
-            // listaPalabras
+            // botonSalir
             // 
-            this.listaPalabras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaPalabras.HideSelection = false;
-            this.listaPalabras.Location = new System.Drawing.Point(12, 353);
-            this.listaPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listaPalabras.Name = "listaPalabras";
-            this.listaPalabras.Size = new System.Drawing.Size(432, 144);
-            this.listaPalabras.TabIndex = 9;
-            this.listaPalabras.UseCompatibleStateImageBehavior = false;
+            this.botonSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.botonSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.botonSalir.Location = new System.Drawing.Point(297, 492);
+            this.botonSalir.Name = "botonSalir";
+            this.botonSalir.Size = new System.Drawing.Size(149, 82);
+            this.botonSalir.TabIndex = 2;
+            this.botonSalir.Text = "SALIR";
+            this.botonSalir.UseVisualStyleBackColor = false;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click_1);
             // 
-            // panelPalabras
+            // buttonAdministrador
             // 
-            this.panelPalabras.BackColor = System.Drawing.Color.LightCyan;
-            this.panelPalabras.Controls.Add(this.panel3);
-            this.panelPalabras.Controls.Add(this.panel2);
-            this.panelPalabras.Location = new System.Drawing.Point(0, 91);
-            this.panelPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelPalabras.Name = "panelPalabras";
-            this.panelPalabras.Size = new System.Drawing.Size(458, 240);
-            this.panelPalabras.TabIndex = 8;
+            this.buttonAdministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAdministrador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
+            this.buttonAdministrador.Name = "buttonAdministrador";
+            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
+            this.buttonAdministrador.TabIndex = 3;
+            this.buttonAdministrador.Text = "ADMIN";
+            this.buttonAdministrador.UseVisualStyleBackColor = false;
+            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
             // 
-            // panel3
+            // tituloJuego
             // 
-            this.panel3.BackColor = System.Drawing.Color.Azure;
-            this.panel3.Controls.Add(this.botonAniadirPalabra);
-            this.panel3.Controls.Add(this.txtPistaNueva);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtPalabraNueva);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(9, 21);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(432, 101);
-            this.panel3.TabIndex = 7;
-            // 
-            // txtPistaNueva
-            // 
-            this.txtPistaNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPistaNueva.Location = new System.Drawing.Point(149, 59);
-            this.txtPistaNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPistaNueva.Name = "txtPistaNueva";
-            this.txtPistaNueva.Size = new System.Drawing.Size(103, 33);
-            this.txtPistaNueva.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(4, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Pista :";
-            // 
-            // txtPalabraNueva
-            // 
-            this.txtPalabraNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPalabraNueva.Location = new System.Drawing.Point(149, 14);
-            this.txtPalabraNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPalabraNueva.Name = "txtPalabraNueva";
-            this.txtPalabraNueva.Size = new System.Drawing.Size(103, 33);
-            this.txtPalabraNueva.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(4, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 28);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Palabra :";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Azure;
-            this.panel2.Controls.Add(this.botonBorrarPalabra);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtPalabraBorrar);
-            this.panel2.Location = new System.Drawing.Point(9, 139);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 64);
-            this.panel2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(4, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 28);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Borrar palabra :";
-            // 
-            // txtPalabraBorrar
-            // 
-            this.txtPalabraBorrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPalabraBorrar.Location = new System.Drawing.Point(149, 22);
-            this.txtPalabraBorrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPalabraBorrar.Name = "txtPalabraBorrar";
-            this.txtPalabraBorrar.Size = new System.Drawing.Size(103, 33);
-            this.txtPalabraBorrar.TabIndex = 2;
-            // 
-            // labelListaPalabras
-            // 
-            this.labelListaPalabras.BackColor = System.Drawing.SystemColors.Window;
-            this.labelListaPalabras.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelListaPalabras.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListaPalabras.ForeColor = System.Drawing.Color.DimGray;
-            this.labelListaPalabras.Location = new System.Drawing.Point(12, 12);
-            this.labelListaPalabras.Name = "labelListaPalabras";
-            this.labelListaPalabras.Size = new System.Drawing.Size(432, 63);
-            this.labelListaPalabras.TabIndex = 7;
-            this.labelListaPalabras.Text = "LISTA DE PALABRAS ";
-            this.labelListaPalabras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // botonAniadirPalabra
-            // 
-            this.botonAniadirPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonAniadirPalabra.Location = new System.Drawing.Point(268, 14);
-            this.botonAniadirPalabra.Name = "botonAniadirPalabra";
-            this.botonAniadirPalabra.Size = new System.Drawing.Size(148, 78);
-            this.botonAniadirPalabra.TabIndex = 5;
-            this.botonAniadirPalabra.TabStop = false;
-            this.botonAniadirPalabra.Tag = "add";
-            // 
-            // botonBorrarPalabra
-            // 
-            this.botonBorrarPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonBorrarPalabra.Location = new System.Drawing.Point(285, 6);
-            this.botonBorrarPalabra.Name = "botonBorrarPalabra";
-            this.botonBorrarPalabra.Size = new System.Drawing.Size(106, 55);
-            this.botonBorrarPalabra.TabIndex = 6;
-            this.botonBorrarPalabra.TabStop = false;
-            this.botonBorrarPalabra.Tag = "delete";
-            // 
-            // imagenAhorcado
-            // 
-            this.imagenAhorcado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imagenAhorcado.Image = global::Ahorcado.Properties.Resources.Harry0;
-            this.imagenAhorcado.Location = new System.Drawing.Point(140, 0);
-            this.imagenAhorcado.Name = "imagenAhorcado";
-            this.imagenAhorcado.Size = new System.Drawing.Size(193, 241);
-            this.imagenAhorcado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imagenAhorcado.TabIndex = 3;
-            this.imagenAhorcado.TabStop = false;
-            // 
-            // buttonVolverInicio
-            // 
-            this.buttonVolverInicio.BackColor = System.Drawing.Color.LightCyan;
-            this.buttonVolverInicio.BackgroundImage = global::Ahorcado.Properties.Resources.back;
-            this.buttonVolverInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonVolverInicio.ForeColor = System.Drawing.Color.Black;
-            this.buttonVolverInicio.Location = new System.Drawing.Point(360, 185);
-            this.buttonVolverInicio.Name = "buttonVolverInicio";
-            this.buttonVolverInicio.Size = new System.Drawing.Size(65, 57);
-            this.buttonVolverInicio.TabIndex = 8;
-            this.buttonVolverInicio.UseVisualStyleBackColor = false;
-            this.buttonVolverInicio.Click += new System.EventHandler(this.buttonVolverInicio_Click);
+            this.tituloJuego.AutoSize = true;
+            this.tituloJuego.BackColor = System.Drawing.Color.White;
+            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloJuego.ForeColor = System.Drawing.Color.Black;
+            this.tituloJuego.Location = new System.Drawing.Point(1, 56);
+            this.tituloJuego.Name = "tituloJuego";
+            this.tituloJuego.Padding = new System.Windows.Forms.Padding(20);
+            this.tituloJuego.Size = new System.Drawing.Size(446, 154);
+            this.tituloJuego.TabIndex = 14;
+            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\n\r\nHARRY POTTER";
+            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonPlay
             // 
+            this.buttonPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonPlay.BackgroundImage = global::Ahorcado.Properties.Resources.play;
             this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonPlay.Location = new System.Drawing.Point(155, 274);
@@ -801,54 +876,31 @@
             this.buttonPlay.UseVisualStyleBackColor = true;
             this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
-            // buttonVolver
-            // 
-            this.buttonVolver.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonVolver.BackgroundImage = global::Ahorcado.Properties.Resources.back;
-            this.buttonVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonVolver.ForeColor = System.Drawing.Color.Black;
-            this.buttonVolver.Location = new System.Drawing.Point(360, 518);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(65, 57);
-            this.buttonVolver.TabIndex = 9;
-            this.buttonVolver.UseVisualStyleBackColor = false;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
-            // 
-            // groupBoxPalabraAdivinar
-            // 
-            this.groupBoxPalabraAdivinar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPalabraAdivinar.Location = new System.Drawing.Point(0, 226);
-            this.groupBoxPalabraAdivinar.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBoxPalabraAdivinar.Name = "groupBoxPalabraAdivinar";
-            this.groupBoxPalabraAdivinar.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxPalabraAdivinar.Size = new System.Drawing.Size(458, 98);
-            this.groupBoxPalabraAdivinar.TabIndex = 4;
-            this.groupBoxPalabraAdivinar.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1391, 602);
             this.Controls.Add(this.panelAdministrador);
-            this.Controls.Add(this.panelJuego);
             this.Controls.Add(this.panelInicio);
+            this.Controls.Add(this.panelJuego);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Juego del ahorcado - Harry Potter";
-            this.panelInicio.ResumeLayout(false);
-            this.panelJuego.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.teclado.ResumeLayout(false);
             this.panelAdministrador.ResumeLayout(false);
             this.panelPalabras.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).EndInit();
+            this.panelJuego.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.teclado.ResumeLayout(false);
+            this.panelInicio.ResumeLayout(false);
+            this.panelInicio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -908,6 +960,9 @@
         private System.Windows.Forms.Button buttonVolverInicio;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.GroupBox groupBoxPalabraAdivinar;
+        private System.Windows.Forms.Button buttonRepeat;
+        private System.Windows.Forms.Panel panelFallo;
+        private System.Windows.Forms.Panel panelAcierto;
     }
 }
 
