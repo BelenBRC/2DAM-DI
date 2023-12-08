@@ -148,5 +148,17 @@
   <ItemGroup>
     <None Include="Resources\voldemortAtaca1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancela.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminarPalabra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevaPalabra.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

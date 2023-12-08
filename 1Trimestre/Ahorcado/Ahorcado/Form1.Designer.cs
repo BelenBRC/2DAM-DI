@@ -31,19 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelAdministrador = new System.Windows.Forms.Panel();
             this.buttonVolver = new System.Windows.Forms.Button();
-            this.listaPalabras = new System.Windows.Forms.ListView();
+            this.contenedorListaPalabras = new System.Windows.Forms.ListView();
             this.panelPalabras = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.botonAniadirPalabra = new System.Windows.Forms.PictureBox();
-            this.txtPistaNueva = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonConfirmar = new System.Windows.Forms.Button();
+            this.buttonBorrar = new System.Windows.Forms.Button();
+            this.buttonAgregar = new System.Windows.Forms.Button();
+            this.panelAgregarPalabra = new System.Windows.Forms.Panel();
             this.txtPalabraNueva = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.botonBorrarPalabra = new System.Windows.Forms.PictureBox();
+            this.panelEliminarPalabra = new System.Windows.Forms.Panel();
+            this.comboBoxEliminar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPalabraBorrar = new System.Windows.Forms.TextBox();
             this.labelListaPalabras = new System.Windows.Forms.Label();
+            this.panelInicio = new System.Windows.Forms.Panel();
+            this.botonSalir = new System.Windows.Forms.Button();
+            this.buttonAdministrador = new System.Windows.Forms.Button();
+            this.tituloJuego = new System.Windows.Forms.Label();
+            this.buttonPlay = new System.Windows.Forms.Button();
             this.panelJuego = new System.Windows.Forms.Panel();
             this.panelFallo = new System.Windows.Forms.Panel();
             this.panelAcierto = new System.Windows.Forms.Panel();
@@ -80,29 +85,22 @@
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonA = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
-            this.panelInicio = new System.Windows.Forms.Panel();
-            this.botonSalir = new System.Windows.Forms.Button();
-            this.buttonAdministrador = new System.Windows.Forms.Button();
-            this.tituloJuego = new System.Windows.Forms.Label();
-            this.buttonPlay = new System.Windows.Forms.Button();
             this.panelAdministrador.SuspendLayout();
             this.panelPalabras.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).BeginInit();
+            this.panelAgregarPalabra.SuspendLayout();
+            this.panelEliminarPalabra.SuspendLayout();
+            this.panelInicio.SuspendLayout();
             this.panelJuego.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).BeginInit();
             this.panel1.SuspendLayout();
             this.teclado.SuspendLayout();
-            this.panelInicio.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAdministrador
             // 
             this.panelAdministrador.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
             this.panelAdministrador.Controls.Add(this.buttonVolver);
-            this.panelAdministrador.Controls.Add(this.listaPalabras);
+            this.panelAdministrador.Controls.Add(this.contenedorListaPalabras);
             this.panelAdministrador.Controls.Add(this.panelPalabras);
             this.panelAdministrador.Controls.Add(this.labelListaPalabras);
             this.panelAdministrador.Location = new System.Drawing.Point(928, 0);
@@ -123,133 +121,139 @@
             this.buttonVolver.UseVisualStyleBackColor = false;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
-            // listaPalabras
+            // contenedorListaPalabras
             // 
-            this.listaPalabras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listaPalabras.HideSelection = false;
-            this.listaPalabras.Location = new System.Drawing.Point(12, 353);
-            this.listaPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.listaPalabras.Name = "listaPalabras";
-            this.listaPalabras.Size = new System.Drawing.Size(432, 144);
-            this.listaPalabras.TabIndex = 9;
-            this.listaPalabras.UseCompatibleStateImageBehavior = false;
+            this.contenedorListaPalabras.Font = new System.Drawing.Font("Calibri Light", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contenedorListaPalabras.HideSelection = false;
+            this.contenedorListaPalabras.Location = new System.Drawing.Point(12, 353);
+            this.contenedorListaPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.contenedorListaPalabras.Name = "contenedorListaPalabras";
+            this.contenedorListaPalabras.Size = new System.Drawing.Size(432, 158);
+            this.contenedorListaPalabras.TabIndex = 9;
+            this.contenedorListaPalabras.UseCompatibleStateImageBehavior = false;
             // 
             // panelPalabras
             // 
             this.panelPalabras.BackColor = System.Drawing.Color.LightCyan;
-            this.panelPalabras.Controls.Add(this.panel3);
-            this.panelPalabras.Controls.Add(this.panel2);
+            this.panelPalabras.Controls.Add(this.buttonCancelar);
+            this.panelPalabras.Controls.Add(this.buttonConfirmar);
+            this.panelPalabras.Controls.Add(this.buttonBorrar);
+            this.panelPalabras.Controls.Add(this.buttonAgregar);
+            this.panelPalabras.Controls.Add(this.panelAgregarPalabra);
+            this.panelPalabras.Controls.Add(this.panelEliminarPalabra);
             this.panelPalabras.Location = new System.Drawing.Point(0, 91);
             this.panelPalabras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelPalabras.Name = "panelPalabras";
             this.panelPalabras.Size = new System.Drawing.Size(458, 240);
             this.panelPalabras.TabIndex = 8;
             // 
-            // panel3
+            // buttonCancelar
             // 
-            this.panel3.BackColor = System.Drawing.Color.Azure;
-            this.panel3.Controls.Add(this.botonAniadirPalabra);
-            this.panel3.Controls.Add(this.txtPistaNueva);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtPalabraNueva);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(9, 21);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(432, 101);
-            this.panel3.TabIndex = 7;
+            this.buttonCancelar.BackgroundImage = global::Ahorcado.Properties.Resources.cancela;
+            this.buttonCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonCancelar.Location = new System.Drawing.Point(247, 90);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 63);
+            this.buttonCancelar.TabIndex = 11;
+            this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
-            // botonAniadirPalabra
+            // buttonConfirmar
             // 
-            this.botonAniadirPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonAniadirPalabra.Location = new System.Drawing.Point(268, 14);
-            this.botonAniadirPalabra.Name = "botonAniadirPalabra";
-            this.botonAniadirPalabra.Size = new System.Drawing.Size(148, 78);
-            this.botonAniadirPalabra.TabIndex = 5;
-            this.botonAniadirPalabra.TabStop = false;
-            this.botonAniadirPalabra.Tag = "add";
+            this.buttonConfirmar.BackgroundImage = global::Ahorcado.Properties.Resources.confirma;
+            this.buttonConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonConfirmar.Location = new System.Drawing.Point(133, 90);
+            this.buttonConfirmar.Name = "buttonConfirmar";
+            this.buttonConfirmar.Size = new System.Drawing.Size(75, 63);
+            this.buttonConfirmar.TabIndex = 10;
+            this.buttonConfirmar.UseVisualStyleBackColor = true;
+            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
             // 
-            // txtPistaNueva
+            // buttonBorrar
             // 
-            this.txtPistaNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPistaNueva.Location = new System.Drawing.Point(149, 59);
-            this.txtPistaNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPistaNueva.Name = "txtPistaNueva";
-            this.txtPistaNueva.Size = new System.Drawing.Size(103, 33);
-            this.txtPistaNueva.TabIndex = 0;
+            this.buttonBorrar.BackgroundImage = global::Ahorcado.Properties.Resources.eliminarPalabra;
+            this.buttonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonBorrar.Location = new System.Drawing.Point(366, 90);
+            this.buttonBorrar.Name = "buttonBorrar";
+            this.buttonBorrar.Size = new System.Drawing.Size(75, 63);
+            this.buttonBorrar.TabIndex = 9;
+            this.buttonBorrar.UseVisualStyleBackColor = true;
+            this.buttonBorrar.Click += new System.EventHandler(this.buttonBorrar_Click);
             // 
-            // label2
+            // buttonAgregar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(4, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Pista :";
+            this.buttonAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonAgregar.BackgroundImage = global::Ahorcado.Properties.Resources.nuevaPalabra;
+            this.buttonAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonAgregar.Location = new System.Drawing.Point(9, 91);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(75, 63);
+            this.buttonAgregar.TabIndex = 8;
+            this.buttonAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.buttonAgregar.UseVisualStyleBackColor = false;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
+            // panelAgregarPalabra
+            // 
+            this.panelAgregarPalabra.BackColor = System.Drawing.Color.Azure;
+            this.panelAgregarPalabra.Controls.Add(this.txtPalabraNueva);
+            this.panelAgregarPalabra.Controls.Add(this.label1);
+            this.panelAgregarPalabra.Location = new System.Drawing.Point(9, 21);
+            this.panelAgregarPalabra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelAgregarPalabra.Name = "panelAgregarPalabra";
+            this.panelAgregarPalabra.Size = new System.Drawing.Size(432, 62);
+            this.panelAgregarPalabra.TabIndex = 7;
             // 
             // txtPalabraNueva
             // 
-            this.txtPalabraNueva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPalabraNueva.Location = new System.Drawing.Point(149, 14);
+            this.txtPalabraNueva.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPalabraNueva.Location = new System.Drawing.Point(180, 16);
             this.txtPalabraNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPalabraNueva.Name = "txtPalabraNueva";
-            this.txtPalabraNueva.Size = new System.Drawing.Size(103, 33);
+            this.txtPalabraNueva.Size = new System.Drawing.Size(236, 32);
             this.txtPalabraNueva.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Harry P", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(4, 14);
+            this.label1.Location = new System.Drawing.Point(3, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 28);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Palabra :";
+            this.label1.Text = "Agregar palabra:";
             // 
-            // panel2
+            // panelEliminarPalabra
             // 
-            this.panel2.BackColor = System.Drawing.Color.Azure;
-            this.panel2.Controls.Add(this.botonBorrarPalabra);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtPalabraBorrar);
-            this.panel2.Location = new System.Drawing.Point(9, 139);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 64);
-            this.panel2.TabIndex = 6;
+            this.panelEliminarPalabra.BackColor = System.Drawing.Color.Azure;
+            this.panelEliminarPalabra.Controls.Add(this.comboBoxEliminar);
+            this.panelEliminarPalabra.Controls.Add(this.label3);
+            this.panelEliminarPalabra.Location = new System.Drawing.Point(9, 160);
+            this.panelEliminarPalabra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelEliminarPalabra.Name = "panelEliminarPalabra";
+            this.panelEliminarPalabra.Size = new System.Drawing.Size(432, 64);
+            this.panelEliminarPalabra.TabIndex = 6;
             // 
-            // botonBorrarPalabra
+            // comboBoxEliminar
             // 
-            this.botonBorrarPalabra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonBorrarPalabra.Location = new System.Drawing.Point(285, 6);
-            this.botonBorrarPalabra.Name = "botonBorrarPalabra";
-            this.botonBorrarPalabra.Size = new System.Drawing.Size(106, 55);
-            this.botonBorrarPalabra.TabIndex = 6;
-            this.botonBorrarPalabra.TabStop = false;
-            this.botonBorrarPalabra.Tag = "delete";
+            this.comboBoxEliminar.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxEliminar.FormattingEnabled = true;
+            this.comboBoxEliminar.Location = new System.Drawing.Point(182, 19);
+            this.comboBoxEliminar.Name = "comboBoxEliminar";
+            this.comboBoxEliminar.Size = new System.Drawing.Size(236, 32);
+            this.comboBoxEliminar.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Harry P", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(4, 22);
+            this.label3.Location = new System.Drawing.Point(3, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 28);
+            this.label3.Size = new System.Drawing.Size(123, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Borrar palabra :";
-            // 
-            // txtPalabraBorrar
-            // 
-            this.txtPalabraBorrar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPalabraBorrar.Location = new System.Drawing.Point(149, 22);
-            this.txtPalabraBorrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPalabraBorrar.Name = "txtPalabraBorrar";
-            this.txtPalabraBorrar.Size = new System.Drawing.Size(103, 33);
-            this.txtPalabraBorrar.TabIndex = 2;
+            this.label3.Text = "Eliminar palabra:";
             // 
             // labelListaPalabras
             // 
@@ -263,6 +267,68 @@
             this.labelListaPalabras.TabIndex = 7;
             this.labelListaPalabras.Text = "LISTA DE PALABRAS ";
             this.labelListaPalabras.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panelInicio
+            // 
+            this.panelInicio.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panelInicio.Controls.Add(this.botonSalir);
+            this.panelInicio.Controls.Add(this.buttonAdministrador);
+            this.panelInicio.Controls.Add(this.tituloJuego);
+            this.panelInicio.Controls.Add(this.buttonPlay);
+            this.panelInicio.Location = new System.Drawing.Point(0, 0);
+            this.panelInicio.Name = "panelInicio";
+            this.panelInicio.Size = new System.Drawing.Size(458, 589);
+            this.panelInicio.TabIndex = 0;
+            // 
+            // botonSalir
+            // 
+            this.botonSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.botonSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.botonSalir.Location = new System.Drawing.Point(297, 492);
+            this.botonSalir.Name = "botonSalir";
+            this.botonSalir.Size = new System.Drawing.Size(149, 82);
+            this.botonSalir.TabIndex = 2;
+            this.botonSalir.Text = "SALIR";
+            this.botonSalir.UseVisualStyleBackColor = false;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click_1);
+            // 
+            // buttonAdministrador
+            // 
+            this.buttonAdministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonAdministrador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
+            this.buttonAdministrador.Name = "buttonAdministrador";
+            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
+            this.buttonAdministrador.TabIndex = 3;
+            this.buttonAdministrador.Text = "ADMIN";
+            this.buttonAdministrador.UseVisualStyleBackColor = false;
+            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
+            // 
+            // tituloJuego
+            // 
+            this.tituloJuego.AutoSize = true;
+            this.tituloJuego.BackColor = System.Drawing.Color.White;
+            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloJuego.ForeColor = System.Drawing.Color.Black;
+            this.tituloJuego.Location = new System.Drawing.Point(1, 56);
+            this.tituloJuego.Name = "tituloJuego";
+            this.tituloJuego.Padding = new System.Windows.Forms.Padding(20);
+            this.tituloJuego.Size = new System.Drawing.Size(446, 154);
+            this.tituloJuego.TabIndex = 14;
+            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\n\r\nHARRY POTTER";
+            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonPlay
+            // 
+            this.buttonPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonPlay.BackgroundImage = global::Ahorcado.Properties.Resources.play;
+            this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonPlay.Location = new System.Drawing.Point(155, 274);
+            this.buttonPlay.Name = "buttonPlay";
+            this.buttonPlay.Size = new System.Drawing.Size(148, 127);
+            this.buttonPlay.TabIndex = 1;
+            this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
             // panelJuego
             // 
@@ -814,68 +880,6 @@
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = false;
             // 
-            // panelInicio
-            // 
-            this.panelInicio.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
-            this.panelInicio.Controls.Add(this.botonSalir);
-            this.panelInicio.Controls.Add(this.buttonAdministrador);
-            this.panelInicio.Controls.Add(this.tituloJuego);
-            this.panelInicio.Controls.Add(this.buttonPlay);
-            this.panelInicio.Location = new System.Drawing.Point(0, 0);
-            this.panelInicio.Name = "panelInicio";
-            this.panelInicio.Size = new System.Drawing.Size(458, 589);
-            this.panelInicio.TabIndex = 0;
-            // 
-            // botonSalir
-            // 
-            this.botonSalir.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.botonSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.botonSalir.Location = new System.Drawing.Point(297, 492);
-            this.botonSalir.Name = "botonSalir";
-            this.botonSalir.Size = new System.Drawing.Size(149, 82);
-            this.botonSalir.TabIndex = 2;
-            this.botonSalir.Text = "SALIR";
-            this.botonSalir.UseVisualStyleBackColor = false;
-            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click_1);
-            // 
-            // buttonAdministrador
-            // 
-            this.buttonAdministrador.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonAdministrador.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonAdministrador.Location = new System.Drawing.Point(12, 493);
-            this.buttonAdministrador.Name = "buttonAdministrador";
-            this.buttonAdministrador.Size = new System.Drawing.Size(147, 82);
-            this.buttonAdministrador.TabIndex = 3;
-            this.buttonAdministrador.Text = "ADMIN";
-            this.buttonAdministrador.UseVisualStyleBackColor = false;
-            this.buttonAdministrador.Click += new System.EventHandler(this.buttonAdministrador_Click);
-            // 
-            // tituloJuego
-            // 
-            this.tituloJuego.AutoSize = true;
-            this.tituloJuego.BackColor = System.Drawing.Color.White;
-            this.tituloJuego.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tituloJuego.ForeColor = System.Drawing.Color.Black;
-            this.tituloJuego.Location = new System.Drawing.Point(1, 56);
-            this.tituloJuego.Name = "tituloJuego";
-            this.tituloJuego.Padding = new System.Windows.Forms.Padding(20);
-            this.tituloJuego.Size = new System.Drawing.Size(446, 154);
-            this.tituloJuego.TabIndex = 14;
-            this.tituloJuego.Text = "JUEGO DEL AHORCADO\r\n\r\nHARRY POTTER";
-            this.tituloJuego.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonPlay
-            // 
-            this.buttonPlay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonPlay.BackgroundImage = global::Ahorcado.Properties.Resources.play;
-            this.buttonPlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPlay.Location = new System.Drawing.Point(155, 274);
-            this.buttonPlay.Name = "buttonPlay";
-            this.buttonPlay.Size = new System.Drawing.Size(148, 127);
-            this.buttonPlay.TabIndex = 1;
-            this.buttonPlay.UseVisualStyleBackColor = true;
-            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -889,18 +893,16 @@
             this.Text = "Juego del ahorcado - Harry Potter";
             this.panelAdministrador.ResumeLayout(false);
             this.panelPalabras.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonAniadirPalabra)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.botonBorrarPalabra)).EndInit();
+            this.panelAgregarPalabra.ResumeLayout(false);
+            this.panelAgregarPalabra.PerformLayout();
+            this.panelEliminarPalabra.ResumeLayout(false);
+            this.panelEliminarPalabra.PerformLayout();
+            this.panelInicio.ResumeLayout(false);
+            this.panelInicio.PerformLayout();
             this.panelJuego.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imagenAhorcado)).EndInit();
             this.panel1.ResumeLayout(false);
             this.teclado.ResumeLayout(false);
-            this.panelInicio.ResumeLayout(false);
-            this.panelInicio.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -910,18 +912,13 @@
         private System.Windows.Forms.Panel panelInicio;
         private System.Windows.Forms.Panel panelJuego;
         private System.Windows.Forms.Panel panelAdministrador;
-        private System.Windows.Forms.ListView listaPalabras;
+        private System.Windows.Forms.ListView contenedorListaPalabras;
         private System.Windows.Forms.Panel panelPalabras;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox botonAniadirPalabra;
-        private System.Windows.Forms.TextBox txtPistaNueva;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelAgregarPalabra;
         private System.Windows.Forms.TextBox txtPalabraNueva;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox botonBorrarPalabra;
+        private System.Windows.Forms.Panel panelEliminarPalabra;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPalabraBorrar;
         private System.Windows.Forms.Label labelListaPalabras;
         private System.Windows.Forms.PictureBox imagenAhorcado;
         private System.Windows.Forms.Panel panel1;
@@ -963,6 +960,11 @@
         private System.Windows.Forms.Button buttonRepeat;
         private System.Windows.Forms.Panel panelFallo;
         private System.Windows.Forms.Panel panelAcierto;
+        private System.Windows.Forms.ComboBox comboBoxEliminar;
+        private System.Windows.Forms.Button buttonCancelar;
+        private System.Windows.Forms.Button buttonConfirmar;
+        private System.Windows.Forms.Button buttonBorrar;
+        private System.Windows.Forms.Button buttonAgregar;
     }
 }
 

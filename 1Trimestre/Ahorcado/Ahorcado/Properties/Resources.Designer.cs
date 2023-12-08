@@ -83,6 +83,36 @@ namespace Ahorcado.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancela {
+            get {
+                object obj = ResourceManager.GetObject("cancela", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap confirma {
+            get {
+                object obj = ResourceManager.GetObject("confirma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminarPalabra {
+            get {
+                object obj = ResourceManager.GetObject("eliminarPalabra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo2 {
             get {
                 object obj = ResourceManager.GetObject("fondo2", resourceCulture);
@@ -206,6 +236,16 @@ namespace Ahorcado.Properties {
         internal static System.Drawing.Bitmap HarryWin {
             get {
                 object obj = ResourceManager.GetObject("HarryWin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nuevaPalabra {
+            get {
+                object obj = ResourceManager.GetObject("nuevaPalabra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

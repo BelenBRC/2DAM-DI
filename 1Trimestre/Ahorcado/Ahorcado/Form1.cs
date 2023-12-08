@@ -118,6 +118,17 @@ namespace Ahorcado
         {
             panelAdministrador.Visible = true;
             panelInicio.Visible = false;
+
+            //Mostrar palabras en ListView contenedorListaPalabras
+            mostrarListadoPalabras();
+
+            //Ocultar paneles
+            panelAgregarPalabra.Visible = false;
+            panelEliminarPalabra.Visible = false;
+
+            //Ocultar botones confirmar y cancelar
+            buttonConfirmar.Visible = false;
+            buttonCancelar.Visible = false;
         }
 
         private void buttonVolverInicio_Click(object sender, EventArgs e)
@@ -185,6 +196,154 @@ namespace Ahorcado
                 MessageBox.Show("No se pudo colocar la palabra");
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void buttonRepeat_Click(object sender, EventArgs e)
+        {
+            reestablecerControlesJuego();
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            //Ocultar botones agregar y eliminar
+            buttonAgregar.Visible = false;
+            buttonBorrar.Visible = false;
+
+            //Mostrar botones confirmar y cancelar
+            buttonConfirmar.Visible = true;
+            buttonCancelar.Visible = true;
+
+            //Mostrar panel de eliminar palabra
+            panelEliminarPalabra.Visible = true;
+
+            //Mostrar las palabras en el comboBox
+            comboBoxEliminar.Items.Clear();
+            string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
+            using (TextReader lector = new StreamReader(ruta, Encoding.UTF8))
+            {
+                var allWords = lector.ReadToEnd().Split('\n');
+                foreach (string palabra in allWords)
+                {
+                    comboBoxEliminar.Items.Add(palabra.Trim());
+                }
+            }
+        }
+
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            //Ocultar botones agregar y eliminar
+            buttonAgregar.Visible = false;
+            buttonBorrar.Visible = false;
+
+            //Mostrar botones confirmar y cancelar
+            buttonConfirmar.Visible = true;
+            buttonCancelar.Visible = true;
+
+            //Mostrar panel de agregar palabra
+            panelAgregarPalabra.Visible = true;
+        }
+
+
+        private void buttonConfirmar_Click(object sender, EventArgs e)
+        {
+            //Limpiar campos
+            txtPalabraNueva.Text = "";
+            comboBoxEliminar.Text = "";
+
+            if (panelAgregarPalabra.Visible)
+            {
+                //Comprobar que la palabra no esté vacía
+                if (txtPalabraNueva.Text == "")
+                {
+                    MessageBox.Show("No se puede agregar una palabra vacía");
+                }
+                else
+                {
+                    //Comprobar que no está repetida
+                    bool repetida = false;
+                    string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
+                    using (TextReader lector = new StreamReader(ruta, Encoding.UTF8))
+                    {
+                        var allWords = lector.ReadToEnd().Split('\n');
+                        foreach (string palabra in allWords)
+                        {
+                            if (palabra.Trim().ToUpper() == txtPalabraNueva.Text.Trim().ToUpper())
+                            {
+                                repetida = true;
+                            }
+                        }
+                    }
+                    if (repetida)
+                    {
+                        MessageBox.Show("La palabra ya existe");
+                    }
+                    else
+                    {
+                        //Agregar palabra al archivo de texto
+                        using (TextWriter escritor = new StreamWriter(ruta, true))
+                        {
+                            escritor.WriteLine(txtPalabraNueva.Text.Trim());
+                        }
+                        MessageBox.Show("Palabra agregada correctamente");
+                    }
+                }
+            }
+            else if (panelEliminarPalabra.Visible)
+            {
+                //Comprobar que haya algún elemento seleccionado
+                if(comboBoxEliminar.Text == "")
+                {
+                    MessageBox.Show("No se puede eliminar una palabra vacía");
+                }
+                else
+                {
+                    //Eliminar palabra del archivo de texto
+                    string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
+                    string palabraAEliminar = comboBoxEliminar.Text.Trim();
+                    string[] lineas = File.ReadAllLines(ruta);
+                    File.WriteAllLines(ruta, lineas.Where(l => l != palabraAEliminar).ToArray());
+
+                    MessageBox.Show("Palabra eliminada correctamente");
+                }
+            }
+
+            //Actualizar panel palabras
+            mostrarListadoPalabras();
+
+            //Limpiar campos
+            txtPalabraNueva.Text = "";
+            comboBoxEliminar.Text = "";
+
+            //Ocultar paneles
+            panelAgregarPalabra.Visible = false;
+            panelEliminarPalabra.Visible = false;
+
+            //Ocultar botones confirmar y cancelar
+            buttonConfirmar.Visible = false;
+            buttonCancelar.Visible = false;
+
+            //Mostrar botones añadir y borrar
+            buttonAgregar.Visible = true;
+            buttonBorrar.Visible = true;
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            //Limpiar campos
+            txtPalabraNueva.Text = "";
+            comboBoxEliminar.Text = "";
+
+            //Ocultar paneles
+            panelAgregarPalabra.Visible = false;
+            panelEliminarPalabra.Visible = false;
+
+            //Ocultar botones confirmar y cancelar
+            buttonConfirmar.Visible = false;
+            buttonCancelar.Visible = false;
+
+            //Mostrar botones añadir y borrar
+            buttonAgregar.Visible = true;
+            buttonBorrar.Visible = true;
         }
 
         //******************************** BOTONES DE LETRAS ********************************//
@@ -374,9 +533,18 @@ namespace Ahorcado
             buttonZ.Click += new EventHandler(buttonLetra_Click);
         }
 
-        private void buttonRepeat_Click(object sender, EventArgs e)
+        private void mostrarListadoPalabras()
         {
-            reestablecerControlesJuego();
+            //Mostrar palabras en ListView contenedorListaPalabras
+            string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
+            using (TextReader lector = new StreamReader(ruta, Encoding.UTF8))
+            {
+                var allWords = lector.ReadToEnd().Split('\n');
+                foreach (string palabra in allWords)
+                {
+                    contenedorListaPalabras.Items.Add(palabra.Trim());
+                }
+            }
         }
     }
 }
