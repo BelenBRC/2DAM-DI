@@ -85,6 +85,7 @@
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonA = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
+            this.labelVictoria = new System.Windows.Forms.Label();
             this.panelAdministrador.SuspendLayout();
             this.panelPalabras.SuspendLayout();
             this.panelAgregarPalabra.SuspendLayout();
@@ -332,6 +333,7 @@
             // panelJuego
             // 
             this.panelJuego.BackgroundImage = global::Ahorcado.Properties.Resources.fondo2;
+            this.panelJuego.Controls.Add(this.labelVictoria);
             this.panelJuego.Controls.Add(this.panelFallo);
             this.panelJuego.Controls.Add(this.panelAcierto);
             this.panelJuego.Controls.Add(this.imagenAhorcado);
@@ -879,14 +881,25 @@
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = false;
             // 
+            // labelVictoria
+            // 
+            this.labelVictoria.BackColor = System.Drawing.Color.GreenYellow;
+            this.labelVictoria.Font = new System.Drawing.Font("Harry P", 15F);
+            this.labelVictoria.Location = new System.Drawing.Point(-3, 203);
+            this.labelVictoria.Name = "labelVictoria";
+            this.labelVictoria.Size = new System.Drawing.Size(461, 47);
+            this.labelVictoria.TabIndex = 7;
+            this.labelVictoria.Text = "ENHORABUENA! HAS SALVADO A POTTER";
+            this.labelVictoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 590);
+            this.Controls.Add(this.panelJuego);
             this.Controls.Add(this.panelAdministrador);
             this.Controls.Add(this.panelInicio);
-            this.Controls.Add(this.panelJuego);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Juego del ahorcado - Harry Potter";
@@ -964,6 +977,7 @@
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.Button buttonAgregar;
         private System.Windows.Forms.TextBox textBoxPalabraNueva;
+        private System.Windows.Forms.Label labelVictoria;
     }
 }
 

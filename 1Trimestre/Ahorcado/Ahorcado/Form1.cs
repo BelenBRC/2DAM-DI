@@ -367,7 +367,7 @@ namespace Ahorcado
             if (palabraActual.ToUpper().Contains(letraActual))
             {
                 //Poner la letra del teclado en verde
-                letra.BackColor = Color.Green;
+                letra.BackColor = Color.GreenYellow;
                 //Mostrar panel de acierto
                 panelAcierto.Visible = true;
                 //Ocultar panel de fallo
@@ -399,6 +399,12 @@ namespace Ahorcado
                     //Ocultar paneles de acierto y fallo
                     panelAcierto.Visible = false;
                     panelFallo.Visible = false;
+                    //Mostrar mensaje de victoria
+                    labelVictoria.Visible = true;
+                    labelVictoria.Text = "ENHORABUENA! HAS SALVADO A POTTER";
+                    labelVictoria.Font = harryPotter;
+                    labelVictoria.BackColor = Color.GreenYellow;
+                    labelVictoria.Font = new Font (harryPotter.FontFamily, 15);
                 }
             }
             else
@@ -415,7 +421,6 @@ namespace Ahorcado
 
                 if (oportunidades == 0)
                 {
-                    MessageBox.Show("¡Has perdido!");
                     imagenAhorcado.Image = Properties.Resources.HarryLose;
 
                     //Mostrar palabra
@@ -431,6 +436,13 @@ namespace Ahorcado
                     //Ocultar paneles de acierto y fallo
                     panelAcierto.Visible = false;
                     panelFallo.Visible = false;
+
+                    //Mostrar mensaje de derrota
+                    labelVictoria.Visible = true;
+                    labelVictoria.Text = "VAYA... HA GANADO VOLDEMORT";
+                    labelVictoria.Font = harryPotter;
+                    labelVictoria.BackColor = Color.Red;
+                    labelVictoria.Font = new Font(harryPotter.FontFamily, 15);
                 }
             }
         }
@@ -440,6 +452,7 @@ namespace Ahorcado
             //Ocultar imágenes de victoria y fallo
             panelAcierto.Visible = false;
             panelFallo.Visible = false;
+            labelVictoria.Visible = false;
 
             //Activar todos los botones
             buttonA.Enabled = true;
