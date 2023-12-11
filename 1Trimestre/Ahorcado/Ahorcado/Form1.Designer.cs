@@ -38,8 +38,8 @@
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.buttonAgregar = new System.Windows.Forms.Button();
             this.panelAgregarPalabra = new System.Windows.Forms.Panel();
-            this.txtPalabraNueva = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPalabraNueva = new System.Windows.Forms.TextBox();
             this.panelEliminarPalabra = new System.Windows.Forms.Panel();
             this.comboBoxEliminar = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
             this.panelAdministrador.Controls.Add(this.contenedorListaPalabras);
             this.panelAdministrador.Controls.Add(this.panelPalabras);
             this.panelAdministrador.Controls.Add(this.labelListaPalabras);
-            this.panelAdministrador.Location = new System.Drawing.Point(928, 0);
+            this.panelAdministrador.Location = new System.Drawing.Point(0, 0);
             this.panelAdministrador.Name = "panelAdministrador";
             this.panelAdministrador.Size = new System.Drawing.Size(458, 589);
             this.panelAdministrador.TabIndex = 2;
@@ -196,22 +196,13 @@
             // panelAgregarPalabra
             // 
             this.panelAgregarPalabra.BackColor = System.Drawing.Color.Azure;
-            this.panelAgregarPalabra.Controls.Add(this.txtPalabraNueva);
             this.panelAgregarPalabra.Controls.Add(this.label1);
+            this.panelAgregarPalabra.Controls.Add(this.textBoxPalabraNueva);
             this.panelAgregarPalabra.Location = new System.Drawing.Point(9, 21);
             this.panelAgregarPalabra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelAgregarPalabra.Name = "panelAgregarPalabra";
             this.panelAgregarPalabra.Size = new System.Drawing.Size(432, 62);
             this.panelAgregarPalabra.TabIndex = 7;
-            // 
-            // txtPalabraNueva
-            // 
-            this.txtPalabraNueva.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPalabraNueva.Location = new System.Drawing.Point(180, 16);
-            this.txtPalabraNueva.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPalabraNueva.Name = "txtPalabraNueva";
-            this.txtPalabraNueva.Size = new System.Drawing.Size(236, 32);
-            this.txtPalabraNueva.TabIndex = 1;
             // 
             // label1
             // 
@@ -223,6 +214,14 @@
             this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Agregar palabra:";
+            // 
+            // textBoxPalabraNueva
+            // 
+            this.textBoxPalabraNueva.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPalabraNueva.Location = new System.Drawing.Point(180, 16);
+            this.textBoxPalabraNueva.Name = "textBoxPalabraNueva";
+            this.textBoxPalabraNueva.Size = new System.Drawing.Size(236, 32);
+            this.textBoxPalabraNueva.TabIndex = 4;
             // 
             // panelEliminarPalabra
             // 
@@ -338,7 +337,7 @@
             this.panelJuego.Controls.Add(this.imagenAhorcado);
             this.panelJuego.Controls.Add(this.groupBoxPalabraAdivinar);
             this.panelJuego.Controls.Add(this.panel1);
-            this.panelJuego.Location = new System.Drawing.Point(464, 0);
+            this.panelJuego.Location = new System.Drawing.Point(0, 0);
             this.panelJuego.Name = "panelJuego";
             this.panelJuego.Size = new System.Drawing.Size(458, 589);
             this.panelJuego.TabIndex = 1;
@@ -884,7 +883,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1391, 602);
+            this.ClientSize = new System.Drawing.Size(458, 590);
             this.Controls.Add(this.panelAdministrador);
             this.Controls.Add(this.panelInicio);
             this.Controls.Add(this.panelJuego);
@@ -915,7 +914,6 @@
         private System.Windows.Forms.ListView contenedorListaPalabras;
         private System.Windows.Forms.Panel panelPalabras;
         private System.Windows.Forms.Panel panelAgregarPalabra;
-        private System.Windows.Forms.TextBox txtPalabraNueva;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelEliminarPalabra;
         private System.Windows.Forms.Label label3;
@@ -965,6 +963,7 @@
         private System.Windows.Forms.Button buttonConfirmar;
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.TextBox textBoxPalabraNueva;
     }
 }
 

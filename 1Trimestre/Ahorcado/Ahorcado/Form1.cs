@@ -109,7 +109,11 @@ namespace Ahorcado
         private void buttonPlay_Click(object sender, EventArgs e)
         {
             panelJuego.Visible = true;
+            panelJuego.BringToFront();
+            
             panelInicio.Visible = false;
+            panelInicio.SendToBack();
+            panelAdministrador.SendToBack();
 
             reestablecerControlesJuego();
         }
@@ -117,9 +121,10 @@ namespace Ahorcado
         private void buttonAdministrador_Click(object sender, EventArgs e)
         {
             panelAdministrador.Visible = true;
+            panelAdministrador.BringToFront();
             panelInicio.Visible = false;
 
-            //Mostrar palabras en ListView contenedorListaPalabras
+            //Mostrar palabras en ListView contenedorPalabras
             mostrarListadoPalabras();
 
             //Ocultar paneles
@@ -134,12 +139,14 @@ namespace Ahorcado
         private void buttonVolverInicio_Click(object sender, EventArgs e)
         {
             panelInicio.Visible = true;
+            panelInicio.BringToFront();
             panelJuego.Visible = false;
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             panelInicio.Visible = true;
+            panelInicio.BringToFront();
             panelAdministrador.Visible = false;
         }
 
@@ -247,18 +254,20 @@ namespace Ahorcado
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
             //Limpiar campos
-            txtPalabraNueva.Text = "";
+            textBoxPalabraNueva.Text = "";
             comboBoxEliminar.Text = "";
 
             if (panelAgregarPalabra.Visible)
             {
                 //Comprobar que la palabra no esté vacía
-                if (txtPalabraNueva.Text == "")
+                if (textBoxPalabraNueva.Text == "")
                 {
                     MessageBox.Show("No se puede agregar una palabra vacía");
+                    MessageBox.Show("Se está intentando agregar: " + textBoxPalabraNueva.Text);
                 }
                 else
                 {
+                    MessageBox.Show("Se está intentando agregar: " + textBoxPalabraNueva.Text);
                     //Comprobar que no está repetida
                     bool repetida = false;
                     string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
@@ -267,7 +276,7 @@ namespace Ahorcado
                         var allWords = lector.ReadToEnd().Split('\n');
                         foreach (string palabra in allWords)
                         {
-                            if (palabra.Trim().ToUpper() == txtPalabraNueva.Text.Trim().ToUpper())
+                            if (palabra.Trim().ToUpper() == textBoxPalabraNueva.Text.Trim().ToUpper())
                             {
                                 repetida = true;
                             }
@@ -282,7 +291,7 @@ namespace Ahorcado
                         //Agregar palabra al archivo de texto
                         using (TextWriter escritor = new StreamWriter(ruta, true))
                         {
-                            escritor.WriteLine(txtPalabraNueva.Text.Trim());
+                            escritor.WriteLine('\n' + textBoxPalabraNueva.Text.Trim());
                         }
                         MessageBox.Show("Palabra agregada correctamente");
                     }
@@ -311,7 +320,7 @@ namespace Ahorcado
             mostrarListadoPalabras();
 
             //Limpiar campos
-            txtPalabraNueva.Text = "";
+            textBoxPalabraNueva.Text = "";
             comboBoxEliminar.Text = "";
 
             //Ocultar paneles
@@ -330,7 +339,7 @@ namespace Ahorcado
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             //Limpiar campos
-            txtPalabraNueva.Text = "";
+            textBoxPalabraNueva.Text = "";
             comboBoxEliminar.Text = "";
 
             //Ocultar paneles
@@ -535,7 +544,7 @@ namespace Ahorcado
 
         private void mostrarListadoPalabras()
         {
-            //Mostrar palabras en ListView contenedorListaPalabras
+            //Mostrar palabras en ListView contenedorPalabras
             string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
             using (TextReader lector = new StreamReader(ruta, Encoding.UTF8))
             {
