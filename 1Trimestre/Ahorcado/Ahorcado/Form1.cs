@@ -361,12 +361,13 @@ namespace Ahorcado
             Button letra = (Button)sender;
             char letraActual = letra.Text.ToCharArray()[0];
             letra.Enabled = false;
-            letra.BackColor = Color.Gray;
             
             palabraActual = palabraActual.ToUpper();
 
             if (palabraActual.ToUpper().Contains(letraActual))
             {
+                //Poner la letra del teclado en verde
+                letra.BackColor = Color.Green;
                 //Mostrar panel de acierto
                 panelAcierto.Visible = true;
                 //Ocultar panel de fallo
@@ -405,6 +406,8 @@ namespace Ahorcado
                 oportunidades--;
                 imagenAhorcado.Image = imagenes[oportunidades];
                 
+                //Poner la letra del teclado en rojo
+                letra.BackColor = Color.Red;
                 //Mostrar panel de fallo
                 panelFallo.Visible = true;
                 //Ocultar panel de acierto
