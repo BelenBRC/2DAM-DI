@@ -231,7 +231,8 @@ namespace Ahorcado
                 var allWords = lector.ReadToEnd().Split('\n');
                 foreach (string palabra in allWords)
                 {
-                    comboBoxEliminar.Items.Add(palabra.Trim());
+                    if (palabra.Trim() != "")
+                        comboBoxEliminar.Items.Add(palabra.Trim());
                 }
             }
         }
@@ -253,21 +254,15 @@ namespace Ahorcado
 
         private void buttonConfirmar_Click(object sender, EventArgs e)
         {
-            //Limpiar campos
-            textBoxPalabraNueva.Text = "";
-            comboBoxEliminar.Text = "";
-
             if (panelAgregarPalabra.Visible)
             {
                 //Comprobar que la palabra no esté vacía
                 if (textBoxPalabraNueva.Text == "")
                 {
                     MessageBox.Show("No se puede agregar una palabra vacía");
-                    MessageBox.Show("Se está intentando agregar: " + textBoxPalabraNueva.Text);
                 }
                 else
                 {
-                    MessageBox.Show("Se está intentando agregar: " + textBoxPalabraNueva.Text);
                     //Comprobar que no está repetida
                     bool repetida = false;
                     string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
@@ -561,13 +556,17 @@ namespace Ahorcado
         private void mostrarListadoPalabras()
         {
             //Mostrar palabras en ListView contenedorPalabras
+            contenedorListaPalabras.Items.Clear();
             string ruta = Path.Combine(System.Environment.CurrentDirectory, "palabras.txt");
             using (TextReader lector = new StreamReader(ruta, Encoding.UTF8))
             {
                 var allWords = lector.ReadToEnd().Split('\n');
                 foreach (string palabra in allWords)
                 {
-                    contenedorListaPalabras.Items.Add(palabra.Trim());
+                    if (palabra.Trim() != "")
+                    {
+                        contenedorListaPalabras.Items.Add(palabra.Trim());
+                    }
                 }
             }
         }

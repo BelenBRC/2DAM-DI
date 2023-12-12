@@ -131,7 +131,9 @@
             this.contenedorListaPalabras.Name = "contenedorListaPalabras";
             this.contenedorListaPalabras.Size = new System.Drawing.Size(432, 158);
             this.contenedorListaPalabras.TabIndex = 9;
+            this.contenedorListaPalabras.TileSize = new System.Drawing.Size(200, 20);
             this.contenedorListaPalabras.UseCompatibleStateImageBehavior = false;
+            this.contenedorListaPalabras.View = System.Windows.Forms.View.SmallIcon;
             // 
             // panelPalabras
             // 
@@ -220,6 +222,7 @@
             // 
             this.textBoxPalabraNueva.Font = new System.Drawing.Font("Calibri Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPalabraNueva.Location = new System.Drawing.Point(180, 16);
+            this.textBoxPalabraNueva.MaxLength = 30;
             this.textBoxPalabraNueva.Name = "textBoxPalabraNueva";
             this.textBoxPalabraNueva.Size = new System.Drawing.Size(236, 32);
             this.textBoxPalabraNueva.TabIndex = 4;
@@ -897,9 +900,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 590);
-            this.Controls.Add(this.panelJuego);
             this.Controls.Add(this.panelAdministrador);
             this.Controls.Add(this.panelInicio);
+            this.Controls.Add(this.panelJuego);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Juego del ahorcado - Harry Potter";
