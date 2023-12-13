@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ahorcado
@@ -36,6 +33,8 @@ namespace Ahorcado
 
         private Font harryPotter;
         private Font harryPotterPeque;
+
+        //******************************** INICIALIZACIÓN ********************************//
         public Form1()
         {
             InitializeComponent();
@@ -51,63 +50,74 @@ namespace Ahorcado
             establecerFuncionBotones();
         }
 
+        //******************************** FUENTE ********************************//
+
         private void InicializarFuente()
         {
             try
             {
-                // Ruta de la fuente personalizada
-                string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "harry.ttf");
-
-                // Instalar la fuente personalizada
-                PrivateFontCollection pfc = new PrivateFontCollection();
-                pfc.AddFontFile(ruta);
-
-                // Asignar la fuente personalizada a los objetos Font
-                harryPotter = new Font(pfc.Families[0], 25);
-                harryPotterPeque = new Font(pfc.Families[0], 15);
-
-                labelListaPalabras.Font = harryPotter;
-                tituloJuego.Font = harryPotter;
-                botonSalir.Font = harryPotter;
-                buttonAdministrador.Font = harryPotter;
-                buttonA.Font = harryPotter;
-                buttonB.Font = harryPotter;
-                buttonC.Font = harryPotter;
-                buttonD.Font = harryPotter;
-                buttonE.Font = harryPotter;
-                buttonF.Font = harryPotter;
-                buttonG.Font = harryPotter;
-                buttonH.Font = harryPotter;
-                buttonI.Font = harryPotter;
-                buttonJ.Font = harryPotter;
-                buttonK.Font = harryPotter;
-                buttonL.Font = harryPotter;
-                buttonM.Font = harryPotter;
-                buttonN.Font = harryPotter;
-                buttonÑ.Font = harryPotter;
-                buttonO.Font = harryPotter;
-                buttonP.Font = harryPotter;
-                buttonQ.Font = harryPotter;
-                buttonR.Font = harryPotter;
-                buttonS.Font = harryPotter;
-                buttonT.Font = harryPotter;
-                buttonU.Font = harryPotter;
-                buttonV.Font = harryPotter;
-                buttonW.Font = harryPotter;
-                buttonX.Font = harryPotter;
-                buttonY.Font = harryPotter;
-                buttonZ.Font = harryPotter;
+                //Tratar de poner la fuente personalizada desde el sistema si existe
+                harryPotter = new Font("Harry P", 25);
+                harryPotterPeque = new Font("Harry P", 15);
+                Console.WriteLine("Fuente personalizada cargada correctamente desde Sistema Operativo");
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo cargar la fuente.\nSe establecerá una por defecto");
-                harryPotter = new Font("Arial", 25);
-                harryPotterPeque = new Font("Arial", 15);
-                Console.WriteLine(ex.Message);
-                Application.Exit();
+            catch { 
+                try
+                {
+                    // Ruta de la fuente personalizada
+                    string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "harry.ttf");
+
+                    // Instalar la fuente personalizada
+                    PrivateFontCollection pfc = new PrivateFontCollection();
+                    pfc.AddFontFile(ruta);
+
+                    // Asignar la fuente personalizada a los objetos Font
+                    harryPotter = new Font(pfc.Families[0], 25);
+                    harryPotterPeque = new Font(pfc.Families[0], 15);
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("No se pudo cargar la fuente.\nSe establecerá una por defecto");
+                    harryPotter = new Font("Arial", 25);
+                    harryPotterPeque = new Font("Arial", 15);
+                    Console.WriteLine(ex.Message);
+                }
             }
+
+            labelListaPalabras.Font = harryPotter;
+            tituloJuego.Font = harryPotter;
+            botonSalir.Font = harryPotter;
+            buttonAdministrador.Font = harryPotter;
+            buttonA.Font = harryPotter;
+            buttonB.Font = harryPotter;
+            buttonC.Font = harryPotter;
+            buttonD.Font = harryPotter;
+            buttonE.Font = harryPotter;
+            buttonF.Font = harryPotter;
+            buttonG.Font = harryPotter;
+            buttonH.Font = harryPotter;
+            buttonI.Font = harryPotter;
+            buttonJ.Font = harryPotter;
+            buttonK.Font = harryPotter;
+            buttonL.Font = harryPotter;
+            buttonM.Font = harryPotter;
+            buttonN.Font = harryPotter;
+            buttonÑ.Font = harryPotter;
+            buttonO.Font = harryPotter;
+            buttonP.Font = harryPotter;
+            buttonQ.Font = harryPotter;
+            buttonR.Font = harryPotter;
+            buttonS.Font = harryPotter;
+            buttonT.Font = harryPotter;
+            buttonU.Font = harryPotter;
+            buttonV.Font = harryPotter;
+            buttonW.Font = harryPotter;
+            buttonX.Font = harryPotter;
+            buttonY.Font = harryPotter;
+            buttonZ.Font = harryPotter;
         }
-
         //******************************** ACCIONES DE BOTONES ********************************//
 
         private void botonSalir_Click(object sender, EventArgs e)
@@ -119,6 +129,11 @@ namespace Ahorcado
         {
             panelJuego.Visible = true;
             panelJuego.BringToFront();
+
+            //Posicionar el panel al centro de la pantalla
+            panelJuego.Location = new Point(
+                                this.ClientSize.Width / 2 - panelJuego.Size.Width / 2,
+                                this.ClientSize.Height / 2 - panelJuego.Size.Height / 2);
             
             panelInicio.Visible = false;
             panelInicio.SendToBack();
@@ -133,6 +148,11 @@ namespace Ahorcado
         {
             panelAdministrador.Visible = true;
             panelAdministrador.BringToFront();
+
+            //Posicionar el panel al centro de la pantalla
+            panelAdministrador.Location = new Point(
+                                this.ClientSize.Width / 2 - panelJuego.Size.Width / 2,
+                                this.ClientSize.Height / 2 - panelJuego.Size.Height / 2);
             panelInicio.Visible = false;
 
             InicializarFuente();
@@ -155,6 +175,11 @@ namespace Ahorcado
 
             panelInicio.Visible = true;
             panelInicio.BringToFront();
+
+            //Posicionar el panel al centro de la pantalla
+            panelInicio.Location = new Point(
+                                this.ClientSize.Width / 2 - panelJuego.Size.Width / 2,
+                                this.ClientSize.Height / 2 - panelJuego.Size.Height / 2);
             panelJuego.Visible = false;
         }
 
@@ -164,6 +189,11 @@ namespace Ahorcado
 
             panelInicio.Visible = true;
             panelInicio.BringToFront();
+
+            //Posicionar el panel al centro de la pantalla
+            panelInicio.Location = new Point(
+                                this.ClientSize.Width / 2 - panelJuego.Size.Width / 2,
+                                this.ClientSize.Height / 2 - panelJuego.Size.Height / 2);
             panelAdministrador.Visible = false;
         }
 
