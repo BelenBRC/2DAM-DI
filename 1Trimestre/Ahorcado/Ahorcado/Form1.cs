@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -54,9 +55,16 @@ namespace Ahorcado
         {
             try
             {
-                string ruta = Path.Combine(Environment.CurrentDirectory, "HARRYP_.TTF");
-                harryPotter = new Font(new FontFamily("Harry P"), 25);
-                harryPotterPeque = new Font(new FontFamily("Harry P"), 15);
+                // Ruta de la fuente personalizada
+                string ruta = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "harry.ttf");
+
+                // Instalar la fuente personalizada
+                PrivateFontCollection pfc = new PrivateFontCollection();
+                pfc.AddFontFile(ruta);
+
+                // Asignar la fuente personalizada a los objetos Font
+                harryPotter = new Font(pfc.Families[0], 25);
+                harryPotterPeque = new Font(pfc.Families[0], 15);
 
                 labelListaPalabras.Font = harryPotter;
                 tituloJuego.Font = harryPotter;
@@ -89,11 +97,12 @@ namespace Ahorcado
                 buttonX.Font = harryPotter;
                 buttonY.Font = harryPotter;
                 buttonZ.Font = harryPotter;
-         
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo cargar la fuente");
+                MessageBox.Show("No se pudo cargar la fuente.\nSe establecerá una por defecto");
+                harryPotter = new Font("Arial", 25);
+                harryPotterPeque = new Font("Arial", 15);
                 Console.WriteLine(ex.Message);
                 Application.Exit();
             }
@@ -115,6 +124,8 @@ namespace Ahorcado
             panelInicio.SendToBack();
             panelAdministrador.SendToBack();
 
+            InicializarFuente();
+
             reestablecerControlesJuego();
         }
 
@@ -123,6 +134,8 @@ namespace Ahorcado
             panelAdministrador.Visible = true;
             panelAdministrador.BringToFront();
             panelInicio.Visible = false;
+
+            InicializarFuente();
 
             //Mostrar palabras en ListView contenedorPalabras
             mostrarListadoPalabras();
@@ -138,6 +151,8 @@ namespace Ahorcado
 
         private void buttonVolverInicio_Click(object sender, EventArgs e)
         {
+            InicializarFuente();
+
             panelInicio.Visible = true;
             panelInicio.BringToFront();
             panelJuego.Visible = false;
@@ -145,6 +160,8 @@ namespace Ahorcado
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
+            InicializarFuente();
+
             panelInicio.Visible = true;
             panelInicio.BringToFront();
             panelAdministrador.Visible = false;
@@ -353,6 +370,7 @@ namespace Ahorcado
         //******************************** BOTONES DE LETRAS ********************************//
         private void buttonLetra_Click(object sender, EventArgs e)
         {
+            InicializarFuente();
             Button letra = (Button)sender;
             char letraActual = letra.Text.ToCharArray()[0];
             letra.Enabled = false;
@@ -361,6 +379,7 @@ namespace Ahorcado
 
             if (palabraActual.ToUpper().Contains(letraActual))
             {
+                InicializarFuente();
                 //Poner la letra del teclado en verde
                 letra.BackColor = Color.GreenYellow;
                 //Mostrar panel de acierto
@@ -399,11 +418,13 @@ namespace Ahorcado
                     labelVictoria.Text = "ENHORABUENA! HAS SALVADO A POTTER";
                     labelVictoria.Font = harryPotter;
                     labelVictoria.BackColor = Color.GreenYellow;
-                    labelVictoria.Font = new Font (harryPotter.FontFamily, 15);
+                    labelVictoria.Font = harryPotterPeque;
                 }
+                InicializarFuente();
             }
             else
             {
+                InicializarFuente();
                 oportunidades--;
                 imagenAhorcado.Image = imagenes[oportunidades];
                 
@@ -437,8 +458,9 @@ namespace Ahorcado
                     labelVictoria.Text = "VAYA... HA GANADO VOLDEMORT";
                     labelVictoria.Font = harryPotter;
                     labelVictoria.BackColor = Color.Red;
-                    labelVictoria.Font = new Font(harryPotter.FontFamily, 15);
+                    labelVictoria.Font = harryPotterPeque;
                 }
+                InicializarFuente();
             }
         }
 

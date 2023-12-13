@@ -50,6 +50,7 @@
             this.tituloJuego = new System.Windows.Forms.Label();
             this.buttonPlay = new System.Windows.Forms.Button();
             this.panelJuego = new System.Windows.Forms.Panel();
+            this.labelVictoria = new System.Windows.Forms.Label();
             this.panelFallo = new System.Windows.Forms.Panel();
             this.panelAcierto = new System.Windows.Forms.Panel();
             this.imagenAhorcado = new System.Windows.Forms.PictureBox();
@@ -85,7 +86,6 @@
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonA = new System.Windows.Forms.Button();
             this.buttonB = new System.Windows.Forms.Button();
-            this.labelVictoria = new System.Windows.Forms.Label();
             this.panelAdministrador.SuspendLayout();
             this.panelPalabras.SuspendLayout();
             this.panelAgregarPalabra.SuspendLayout();
@@ -210,11 +210,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Harry P", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(3, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 20);
+            this.label1.Size = new System.Drawing.Size(160, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Agregar palabra:";
             // 
@@ -250,11 +250,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Harry P", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(3, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 20);
+            this.label3.Size = new System.Drawing.Size(161, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Eliminar palabra:";
             // 
@@ -346,6 +346,17 @@
             this.panelJuego.Name = "panelJuego";
             this.panelJuego.Size = new System.Drawing.Size(458, 589);
             this.panelJuego.TabIndex = 1;
+            // 
+            // labelVictoria
+            // 
+            this.labelVictoria.BackColor = System.Drawing.Color.GreenYellow;
+            this.labelVictoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.labelVictoria.Location = new System.Drawing.Point(-3, 203);
+            this.labelVictoria.Name = "labelVictoria";
+            this.labelVictoria.Size = new System.Drawing.Size(461, 47);
+            this.labelVictoria.TabIndex = 7;
+            this.labelVictoria.Text = "ENHORABUENA! HAS SALVADO A POTTER";
+            this.labelVictoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelFallo
             // 
@@ -671,7 +682,7 @@
             this.buttonÑ.Size = new System.Drawing.Size(38, 41);
             this.buttonÑ.TabIndex = 22;
             this.buttonÑ.Tag = "Ñ";
-            this.buttonÑ.Text = "-";
+            this.buttonÑ.Text = "Ñ";
             this.buttonÑ.UseVisualStyleBackColor = false;
             // 
             // buttonN
@@ -883,17 +894,6 @@
             this.buttonB.Tag = "B";
             this.buttonB.Text = "B";
             this.buttonB.UseVisualStyleBackColor = false;
-            // 
-            // labelVictoria
-            // 
-            this.labelVictoria.BackColor = System.Drawing.Color.GreenYellow;
-            this.labelVictoria.Font = new System.Drawing.Font("Harry P", 15F);
-            this.labelVictoria.Location = new System.Drawing.Point(-3, 203);
-            this.labelVictoria.Name = "labelVictoria";
-            this.labelVictoria.Size = new System.Drawing.Size(461, 47);
-            this.labelVictoria.TabIndex = 7;
-            this.labelVictoria.Text = "ENHORABUENA! HAS SALVADO A POTTER";
-            this.labelVictoria.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
